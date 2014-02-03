@@ -46,6 +46,9 @@ public class FullscreenActivity extends Activity {
     private SystemUiHider mSystemUiHider;
 
     @Override
+    /*
+     * ON CREATE!
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -53,6 +56,8 @@ public class FullscreenActivity extends Activity {
 
         final View controlsView = findViewById(R.id.fullscreen_content_controls);
         final View contentView = findViewById(R.id.fullscreen_content);
+        
+        //EditText email = find
 
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.
