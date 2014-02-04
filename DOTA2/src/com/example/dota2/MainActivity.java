@@ -3,6 +3,8 @@ package com.example.dota2;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class MainActivity extends Activity {
@@ -12,6 +14,15 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		//ImageView view = (ImageView)findViewById(R.id.main_image);
+		final Button loginButton = (Button) findViewById(R.id.login_button);
+		loginButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				setContentView(R.layout.activity_user);
+			}
+		});
+		
 	}
 
 	@Override
