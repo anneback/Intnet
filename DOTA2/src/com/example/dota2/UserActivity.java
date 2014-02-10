@@ -20,19 +20,20 @@ public class UserActivity extends TabActivity {
 	        // Tab for Items
 	        TabSpec itemSpec = tabHost.newTabSpec("Items");
 	        // setting Title and Icon for the Tab
-	        itemSpec.setIndicator("Photos", getResources().getDrawable(R.drawable.icon_items_tab));
-	        Intent photosIntent = new Intent(this, ItemsActivity.class);
-	        itemSpec.setContent(photosIntent);
+	        itemSpec.setIndicator("Items", getResources().getDrawable(R.drawable.icon_items_tab));
+	        Intent itemsIntent = new Intent().setClass(this, ItemsActivity.class);
+	        itemSpec.setContent(itemsIntent);
 	         
 	        // Tab for Heroes
 	        TabSpec heroSpec = tabHost.newTabSpec("Heroes");
-	        heroSpec.setIndicator("Videos", getResources().getDrawable(R.drawable.icon_heroes_tab));
-	        Intent videosIntent = new Intent(this, HeroesActivity.class);
-	        heroSpec.setContent(videosIntent);
+	        heroSpec.setIndicator("Heroes", getResources().getDrawable(R.drawable.icon_heroes_tab));
+	        Intent heroesIntent = new Intent().setClass(this, HeroesActivity.class);
+	        heroSpec.setContent(heroesIntent);
 	         
 	        // Adding all TabSpec to TabHost
 	        tabHost.addTab(itemSpec); // Adding Items tab
 	        tabHost.addTab(heroSpec); // Adding Heroes tab
+	        tabHost.setCurrentTab(1);
 	}
 
 	@Override

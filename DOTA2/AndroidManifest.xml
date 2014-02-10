@@ -26,10 +26,10 @@
             android:name="com.example.dota2.UserActivity"
             android:label="@string/title_activity_user" >
         </activity>
-            <!--  Items Activity -->
+        <!-- Items Activity -->
         <activity android:name=".ItemsActivity" />
-         
-        <!--  Heroes Activity -->
+
+        <!-- Heroes Activity -->
         <activity android:name=".HeroesActivity" />
     </application>
 
