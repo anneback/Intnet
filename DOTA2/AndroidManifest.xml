@@ -7,6 +7,7 @@
     <uses-sdk
         android:minSdkVersion="11"
         android:targetSdkVersion="15" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -27,7 +28,10 @@
             android:label="@string/title_activity_user" >
         </activity>
         <!-- Items Activity -->
-        <activity android:name=".ItemsActivity" />
+        <activity android:name=".ItemsActivity"
+            	android:label="@string/app_items"
+       			  android:parentActivityName="com.example.dota2.MainActivity" >
+        </activity>
 
         <!-- Heroes Activity -->
         <activity android:name=".HeroesActivity" />

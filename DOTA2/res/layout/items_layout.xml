@@ -11,5 +11,17 @@
             android:textSize="18dip"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"/>
+
+  <ImageView
+      android:id="@+id/imageView1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/heroes_hover" />
+
+  <Button
+      android:id="@+id/button1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Button" />
      
 </LinearLayout>
