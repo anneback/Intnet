@@ -14,7 +14,11 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
 		//ImageView view = (ImageView)findViewById(R.id.main_image);
+		
+		
+		
 		final Button loginButton = (Button) findViewById(R.id.login_button);
 		loginButton.setOnClickListener(new View.OnClickListener() {
 			
@@ -22,6 +26,7 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				
 				Intent i = new Intent(MainActivity.this, AdminActivity.class);
+
 				startActivity(i);
 		//		setContentView(R.layout.items_layout);
 			}
@@ -37,3 +42,4 @@ public class MainActivity extends Activity {
 	}
 
 }
+

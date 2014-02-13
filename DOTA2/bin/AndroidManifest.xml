@@ -26,11 +26,16 @@
         </activity>
         <activity
             android:name="com.example.dota2.UserActivity"
-            android:label="@string/title_activity_user" >
+            android:label="@string/title_activity_user"
+            android:parentActivityName="com.example.dota2.MainActivity" >
         </activity>
         <!-- Items Activity -->
         <activity
+<<<<<<< HEAD
             android:name="com.example.dota2.ItemsActivity"
+=======
+            android:name=".ItemsActivity"
+>>>>>>> 069292ce2ee8ea08ff781bb777693b3390907725
             android:label="@string/app_items"
             android:parentActivityName="com.example.dota2.MainActivity" >
         </activity>
