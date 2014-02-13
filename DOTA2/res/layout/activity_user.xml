@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:textColor="#d24726"
     tools:context=".UserActivity" >
-
+<!--  
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
         android:layout_centerHorizontal="true"
         android:orientation="horizontal"
         android:weightSum="1.0" >
-
+        
         <SearchView
             android:id="@+id/searchBar"
             android:layout_width="0dp"
@@ -37,6 +37,6 @@
             android:text="@string/balance"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#ffd700" />
-    </LinearLayout>
-
+            
+    </LinearLayout> -->
 </RelativeLayout>

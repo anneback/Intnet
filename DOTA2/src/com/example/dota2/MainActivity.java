@@ -14,23 +14,20 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+
 		//ImageView view = (ImageView)findViewById(R.id.main_image);
-		
-		
-		
+
 		final Button loginButton = (Button) findViewById(R.id.login_button);
 		loginButton.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				
+
 				Intent i = new Intent(MainActivity.this, UserActivity.class);
 				startActivity(i);
-		//		setContentView(R.layout.items_layout);
+				//		setContentView(R.layout.items_layout);
 			}
 		});
-		
 	}
 
 	@Override
