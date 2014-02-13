@@ -15,11 +15,13 @@ public class ItemsActivity extends Activity{
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
         setContentView(R.layout.items_layout);
+        
         imageView = (ImageView) findViewById(R.id.imageView1);
         Button button = (Button) findViewById(R.id.button1);
         final ItemModel IM=new ItemModel();
-   
+  
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 					ArrayList<Item> items=IM.get_all_items();
