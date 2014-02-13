@@ -9,11 +9,11 @@ import de.timroes.axmlrpc.XMLRPCException;
 
 public class UploadThreadTask extends AsyncTask<String, Integer, Object[]> {
 		private  XMLRPCClient client;
-
 		public UploadThreadTask() throws MalformedURLException{
-			 this.client = new XMLRPCClient(new URL("http://192.168.1.31/test.php"));
+			 this.client = new XMLRPCClient(new URL("http://130.229.185.48/test.php"));
 		
 		}
+		
 		@Override
 		protected Object[] doInBackground(String... params) {
 			Object[] response = null;
@@ -23,10 +23,6 @@ public class UploadThreadTask extends AsyncTask<String, Integer, Object[]> {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		
 			return  response;
 		}
-
-		
-
 	}
