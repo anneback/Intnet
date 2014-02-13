@@ -25,7 +25,7 @@ public class Item {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 	public Bitmap get_image(){
 		return image;

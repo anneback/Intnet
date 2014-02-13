@@ -6,13 +6,13 @@ import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 public class ItemModel {
-	
+
 	ArrayList<Item> items;
 	public ItemModel(){
 		items= new ArrayList<Item>();
 	}
 	public ArrayList<Item> get_all_items(){
-			UploadThreadTask upt = null;
+		UploadThreadTask upt = null;
 		//String res="";
 		Object[] res=null;
 		try {
@@ -22,6 +22,7 @@ public class ItemModel {
 			e.printStackTrace();
 		}
 		String[] arr={"get_item_category","Items"};
+		
 		try {
 			res = upt.execute(arr).get();
 		} catch (InterruptedException e) {
@@ -36,10 +37,8 @@ public class ItemModel {
 			Item i= new Item(new Post(hm));
 			items.add(i);
 		}
-		//
 		return items;
-		
 	}
-	
+
 
 }
