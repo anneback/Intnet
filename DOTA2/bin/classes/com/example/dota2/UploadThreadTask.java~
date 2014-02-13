@@ -1,0 +1,51 @@
+package com.example.dota2;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Arrays;
+
+import android.os.AsyncTask;
+import android.util.Log;
+import de.timroes.axmlrpc.XMLRPCClient;
+import de.timroes.axmlrpc.XMLRPCException;
+
+
+public class UploadThreadTask extends AsyncTask<String, Integer, Object[]> {
+<<<<<<< HEAD
+	private  XMLRPCClient client;
+	public UploadThreadTask() throws MalformedURLException{
+		this.client = new XMLRPCClient(new URL("http://130.229.185.48/test.php"));
+
+	}
+	@Override
+	protected Object[] doInBackground(String... params) {
+		Object[] response = null;
+		String[] callargs=new String[10];
+		Log.d("UPLOAD",Arrays.toString(params));
+		try {
+			response = (Object[]) client.call( params[0],params);
+		} catch (XMLRPCException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+=======
+		private  XMLRPCClient client;
+		public UploadThreadTask() throws MalformedURLException{
+			 this.client = new XMLRPCClient(new URL("http://130.229.185.48/test.php"));
+		
+		}
+		
+		@Override
+		protected Object[] doInBackground(String... params) {
+			Object[] response = null;
+			try {
+				// @arg1 method, @arg2 parameters for callback function
+				response = (Object[]) client.call(params[0], params[1]); 
+			} catch (XMLRPCException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return  response;
+>>>>>>> 069292ce2ee8ea08ff781bb777693b3390907725
+		}
+		return  response;
+	}
+}
