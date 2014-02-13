@@ -3,17 +3,15 @@ package com.example.dota2;
 import java.util.concurrent.ExecutionException;
 
 import android.graphics.Bitmap;
-import android.util.Log;
 
 public class Item {
-	private static final String URL ="http://130.229.185.48";
+	private static final String SERVER_URL ="http://130.229.185.48";
 	Post p;
 	Bitmap image;
 	public Item(Post p){
 		this.p=p;
 		//Retrieve and set Image from server
-		Log.d("DEBUGG ITEM",URL+this.get_value("p_image"));
-		set_image(URL+this.get_value("p_image"));
+		set_image(SERVER_URL+get_value("p_image"));
 
 	}
 	public void set_image(String url){

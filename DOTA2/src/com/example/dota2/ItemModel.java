@@ -36,7 +36,7 @@ public class ItemModel {
 			Item i= new Item(new Post(hm));
 			items.add(i);
 		}
-		
+		//
 		return items;
 		
 	}
