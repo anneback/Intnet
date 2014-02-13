@@ -25,7 +25,7 @@ import android.widget.Toast;
 
 public class ItemsActivity extends Activity{
 	
-	private static final String URL ="http://130.229.185.48";
+	
 	private ImageView imageView;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
