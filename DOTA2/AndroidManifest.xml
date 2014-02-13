@@ -31,13 +31,21 @@
         </activity>
         <!-- Items Activity -->
         <activity
-            android:name=".ItemsActivity"
+            android:name="com.example.dota2.ItemsActivity"
             android:label="@string/app_items"
             android:parentActivityName="com.example.dota2.MainActivity" >
         </activity>
 
         <!-- Heroes Activity -->
-        <activity android:name=".HeroesActivity" />
+        <activity android:name="com.example.dota2.HeroesActivity" />
+        <activity
+            android:name="com.example.dota2.AdminActivity"
+            android:label="@string/title_activity_admin"
+            android:parentActivityName="com.example.dota2.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.dota2.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

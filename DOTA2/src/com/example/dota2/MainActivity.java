@@ -24,6 +24,7 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 
 				Intent i = new Intent(MainActivity.this, UserActivity.class);
+
 				startActivity(i);
 				//		setContentView(R.layout.items_layout);
 			}
@@ -38,3 +39,4 @@ public class MainActivity extends Activity {
 	}
 
 }
+

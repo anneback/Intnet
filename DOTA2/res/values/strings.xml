@@ -18,5 +18,6 @@
     <string name="title_section3">Section 3</string>
     <string name="newapi">NewApi</string>
     <string name="app_items">Dota2 Items</string>
+    <string name="title_activity_admin">AdminActivity</string>
 
 </resources>
