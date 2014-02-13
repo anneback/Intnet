@@ -30,9 +30,12 @@ public class ItemsActivity extends Activity{
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
         setContentView(R.layout.items_layout);
+        
         imageView = (ImageView) findViewById(R.id.imageView1);
         final Button button = (Button) findViewById(R.id.button1);
+        
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	Context context = getApplicationContext();

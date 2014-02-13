@@ -18,7 +18,8 @@ public class UploadThreadTask extends AsyncTask<String, Integer, Object[]> {
 		protected Object[] doInBackground(String... params) {
 			Object[] response = null;
 			try {
-				response = (Object[]) client.call( params[0],params[1]);
+				// @arg1 method, @arg2 parameters for callback function
+				response = (Object[]) client.call(params[0], params[1]); 
 			} catch (XMLRPCException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
