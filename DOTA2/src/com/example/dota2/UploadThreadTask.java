@@ -12,8 +12,8 @@ import de.timroes.axmlrpc.XMLRPCException;
 public class UploadThreadTask extends AsyncTask<String, Integer, Object[]> {
 
 	private  XMLRPCClient client;
-	public UploadThreadTask() throws MalformedURLException{
-		this.client = new XMLRPCClient(new URL("http://130.229.185.48/test.php"));
+	public UploadThreadTask(String url) throws MalformedURLException{
+		this.client = new XMLRPCClient(new URL(url));
 
 	}
 	@Override
