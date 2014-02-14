@@ -6,6 +6,7 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.Menu;
 
 public class UserActivity extends FragmentActivity implements ActionBar.TabListener{
 	private final String[] TAB_TEXTS = {"Items","Heroes","Keys"};
@@ -44,5 +45,11 @@ public class UserActivity extends FragmentActivity implements ActionBar.TabListe
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 		Log.d("SimpleActionBarTabsActivity","tab " 
                 + String.valueOf(tab.getPosition()) + " un-clicked");		
+	}
+	
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.user, menu);
+		return true;
 	}
 }

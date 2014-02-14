@@ -64,11 +64,15 @@ public final class R {
         public static final int tab_unselected_pressed_example=0x7f020028;
     }
     public static final class id {
-        public static final int action_settings=0x7f080009;
+        public static final int action_settings=0x7f08000a;
         public static final int button1=0x7f080001;
         public static final int email=0x7f080004;
         public static final int fullscreen_content=0x7f080002;
-        public static final int imageView1=0x7f080008;
+        public static final int imageView1=0x7f080009;
+        public static final int itemid_0=0x7f08000b;
+        public static final int itemid_1=0x7f08000c;
+        public static final int itemid_2=0x7f08000d;
+        public static final int listView1=0x7f080008;
         public static final int login_button=0x7f080006;
         public static final int main_image=0x7f080003;
         public static final int password=0x7f080005;

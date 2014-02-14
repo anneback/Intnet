@@ -10,7 +10,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:textColor="#d24726"
     tools:context=".UserActivity" >
-<!--  
+
+    <!--
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
@@ -38,5 +39,15 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#ffd700" />
             
-    </LinearLayout> -->
+    </LinearLayout>
+    -->
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" >
+    </ListView>
+
 </RelativeLayout>
