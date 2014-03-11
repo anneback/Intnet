@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 public class ItemModel {
-	private String api_url="http://130.229.185.48/test.php";
+	private String api_url="http://130.229.168.72/test.php";
 	ArrayList<Item> items;
 	public ItemModel(){
 		items= new ArrayList<Item>();
