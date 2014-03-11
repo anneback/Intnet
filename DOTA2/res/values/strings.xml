@@ -19,5 +19,8 @@
     <string name="newapi">NewApi</string>
     <string name="app_items">Dota2 Items</string>
     <string name="title_activity_admin">AdminActivity</string>
+    <string name="logout">Logout</string>
+    <string name="bottom_item1">Cart</string>
+    <string name="bottom_item2">Balance</string>
 
 </resources>
