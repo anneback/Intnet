@@ -38,8 +38,6 @@ public class UserActivity extends FragmentActivity implements ActionBar.TabListe
 	}
 	@Override
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {
-		
-		
 		Log.d("SimpleActionBarTabsActivity","tab " 
                 + String.valueOf(tab.getPosition()) + " clicked");		
 	}
@@ -59,6 +57,7 @@ public class UserActivity extends FragmentActivity implements ActionBar.TabListe
 	    // Handle item selection
 	    switch (item.getItemId()) {
 	        case R.id.action_settings:
+	        	//if pressed Logout in settings button go back to main
 	        	startActivity(new Intent(this, MainActivity.class));
 	        default:
 	            return super.onOptionsItemSelected(item);
