@@ -13,9 +13,9 @@ public class AdminModel {
 	public AdminModel(){
 		
 	}
-	public void upload_image(String filePath){
+	public void upload_image(String filePath,String filename){
 		UploadImageTask uploadThread= new UploadImageTask();
-		String[] args={image_url,filePath};
+		String[] args={image_url,filePath,filename};
 		uploadThread.execute(args);
 		
 	}

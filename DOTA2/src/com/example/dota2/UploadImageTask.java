@@ -12,7 +12,7 @@ import android.os.AsyncTask;
 
 public class UploadImageTask extends AsyncTask<String, Integer, Integer> {
 
-	public int upload(String urlPath,String filepath) throws IOException
+	public int upload(String urlPath,String filepath,String filename) throws IOException
 	{
 		//Simple straight forward http post taken from  
 		//http://reecon.wordpress.com/2010/04/25/uploading-files-to-http-server-using-post-android-sdk/
@@ -51,7 +51,7 @@ public class UploadImageTask extends AsyncTask<String, Integer, Integer> {
 
 			outputStream = new DataOutputStream( connection.getOutputStream() );
 			outputStream.writeBytes(twoHyphens + boundary + lineEnd);
-			outputStream.writeBytes("Content-Disposition: form-data; name=\"uploadedfile\";filename=\"" + pathToOurFile +"\"" + lineEnd);
+			outputStream.writeBytes("Content-Disposition: form-data; name=\"uploadedfile\";filename=\"" + filename +"\"" + lineEnd);
 			outputStream.writeBytes(lineEnd);
 
 			bytesAvailable = fileInputStream.available();
@@ -90,7 +90,7 @@ public class UploadImageTask extends AsyncTask<String, Integer, Integer> {
 	protected Integer doInBackground(String... params) {
 		int returnCode=0;
 		try {
-			returnCode=upload(params[0],params[1]);
+			returnCode=upload(params[0],params[1],params[2]);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import android.support.v4.app.NavUtils;
 
@@ -28,13 +29,26 @@ public class AdminActivity extends Activity {
 		setupActionBar();
 		
 		final AdminModel AM= new AdminModel();
+		final EditText itemLabel= (EditText)findViewById(R.id.editText1);
+		final EditText itemDescription= (EditText)findViewById(R.id.editText2);
+		final EditText itemHero= (EditText)findViewById(R.id.editText3);
+		final EditText itemPrice= (EditText)findViewById(R.id.editText4);
 
 		
 		uploadButton = (Button) findViewById(R.id.uploadButton);
 		uploadButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				AM.upload_image(imageFilePath);
+				Post p = new Post();
+				
+				String itemImageName=itemLabel.getText().toString()+".png";
+				p.setPostValue("p_label", itemLabel.getText().toString());
+				p.setPostValue("p_desc", itemDescription.getText().toString());
+				p.setPostValue("p_image", itemImageName);
+				p.setPostValue("p_hero", itemHero.getText().toString());
+				p.setPostValue("p_price", itemPrice.getText().toString());
+				AM.add_item(p);
+				AM.upload_image(imageFilePath,itemImageName);
 			}
 		});
 
