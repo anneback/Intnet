@@ -22,5 +22,6 @@
     <string name="logout">Logout</string>
     <string name="bottom_item1">Cart</string>
     <string name="bottom_item2">Balance</string>
+    <string name="admin_form_title">Add item form</string>
 
 </resources>
