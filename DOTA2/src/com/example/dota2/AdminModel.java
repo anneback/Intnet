@@ -7,8 +7,8 @@ import java.util.concurrent.ExecutionException;
 import android.util.Log;
 
 public class AdminModel {
-	private String image_url="http://130.229.168.72/upload.php";
-	private String api_url="http://130.229.168.72/test.php";
+	private String image_url="http://130.229.128.190/upload.php";
+	private String api_url="http://130.229.128.190/test.php";
 	
 	public AdminModel(){
 		
