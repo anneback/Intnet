@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 public class UserModel {
-	private String image_url="http://130.229.128.190/upload.php";
+	
 	private String api_url="http://130.229.128.190/test.php";
 	public UserModel(){
 		
@@ -15,7 +15,6 @@ public class UserModel {
 		args[0] = "add_item_to_cart";
 		args[1] = p_id.toString();
 		args[2] = sc_id.toString();
-		Object[] res = null;
 		UploadThreadTask upt=null;
 		try {
 			upt = new UploadThreadTask(api_url);

@@ -20,7 +20,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 	private EditText userMailEdit;
 	private EditText userPasswordEdit;
-	private AdminModel AM = new AdminModel();
+	private UserModel UM = new UserModel();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -38,8 +38,8 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 			
-				Integer user_id=AM.register_user(userMailEdit.getText().toString(), userPasswordEdit.getText().toString());
-				Integer sc_id=AM.register_shopping_cart(user_id);
+				Integer user_id=UM.register_user(userMailEdit.getText().toString(), userPasswordEdit.getText().toString());
+				Integer sc_id=UM.register_shopping_cart(user_id);
 				SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 				SharedPreferences.Editor editor = preferences.edit();
 				editor.putInt("user_id", user_id); // value to store
