@@ -20,6 +20,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 	private EditText userMailEdit;
 	private EditText userPasswordEdit;
+	private AdminModel AM = new AdminModel();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -32,12 +33,13 @@ public class MainActivity extends Activity {
 
 		final Button loginButton = (Button) findViewById(R.id.login_button);
 		loginButton.setOnClickListener(new View.OnClickListener() {
-	
+		
 			
 			@Override
 			public void onClick(View v) {
-				Integer user_id=register_user();
-				Integer sc_id=register_shopping_cart(user_id);
+			
+				Integer user_id=AM.register_user(userMailEdit.getText().toString(), userPasswordEdit.getText().toString());
+				Integer sc_id=AM.register_shopping_cart(user_id);
 				SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 				SharedPreferences.Editor editor = preferences.edit();
 				editor.putInt("user_id", user_id); // value to store
@@ -57,59 +59,6 @@ public class MainActivity extends Activity {
 				//		setContentView(R.layout.items_layout);
 			}
 		});
-	}
-	public Integer register_user(){
-		String userMail = userMailEdit.getText().toString();
-		String userPassword = userPasswordEdit.getText().toString();
-		String[] args= new String[3];
-		args[0]="register_user";
-		args[1]=userMail;
-		args[2]=userPassword;
-		Object[] res=null;
-		try {
-			UploadThreadTask upt= new UploadThreadTask("http://130.229.128.190/test.php");
-			res=upt.execute(args).get();
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		for(Object o:res){
-			HashMap<String,String> hm=(HashMap<String,String>) o;
-			return Integer.parseInt(hm.get("u_id"));
-		}
-		return 1337;
-	}
-	public Integer register_shopping_cart(Integer user_id){
-		
-		String[] args= new String[2];
-		args[0]="register_shopping_cart";
-		args[1]=user_id.toString();
-
-		Object[] res=null;
-		try {
-			UploadThreadTask upt= new UploadThreadTask("http://130.229.128.190/test.php");
-			res=upt.execute(args).get();
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		for(Object o:res){
-			HashMap<String,String> hm=(HashMap<String,String>) o;
-			return Integer.parseInt(hm.get("sc_id"));
-		}
-		return 1337;
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
