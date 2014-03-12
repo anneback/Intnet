@@ -33,6 +33,7 @@ public class ItemModel {
 			e.printStackTrace();
 		}
 		for(Object o:res){
+			@SuppressWarnings("unchecked")
 			HashMap<String,String> hm=(HashMap<String,String>) o;
 			Item i= new Item(new Post(hm));
 			items.add(i);

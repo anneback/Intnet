@@ -37,16 +37,14 @@ public class UserModel {
 			UploadThreadTask upt= new UploadThreadTask(api_url);
 			res=upt.execute(args).get();
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		for(Object o:res){
+			@SuppressWarnings("unchecked")
 			HashMap<String,String> hm=(HashMap<String,String>) o;
 			return Integer.parseInt(hm.get("u_id"));
 		}
@@ -63,16 +61,14 @@ public class UserModel {
 			UploadThreadTask upt= new UploadThreadTask(api_url);
 			res=upt.execute(args).get();
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		for(Object o:res){
+			@SuppressWarnings("unchecked")
 			HashMap<String,String> hm=(HashMap<String,String>) o;
 			return Integer.parseInt(hm.get("sc_id"));
 		}

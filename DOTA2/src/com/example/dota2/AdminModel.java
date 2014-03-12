@@ -2,7 +2,6 @@ package com.example.dota2;
 
 import java.net.MalformedURLException;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 import android.util.Log;
@@ -44,56 +43,6 @@ public class AdminModel {
 		Log.d("AdminModel",Arrays.toString(res));
 	}
 	
-	public Integer register_user(String userMail,String userPassword){
-		String[] args= new String[3];
-		args[0]="register_user";
-		args[1]=userMail;
-		args[2]=userPassword;
-		Object[] res=null;
-		try {
-			UploadThreadTask upt= new UploadThreadTask(api_url);
-			res=upt.execute(args).get();
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		for(Object o:res){
-			HashMap<String,String> hm=(HashMap<String,String>) o;
-			return Integer.parseInt(hm.get("u_id"));
-		}
-		return 1337;
-	}
-	public Integer register_shopping_cart(Integer user_id){
-		
-		String[] args= new String[2];
-		args[0]="register_shopping_cart";
-		args[1]=user_id.toString();
 
-		Object[] res=null;
-		try {
-			UploadThreadTask upt= new UploadThreadTask(api_url);
-			res=upt.execute(args).get();
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		for(Object o:res){
-			HashMap<String,String> hm=(HashMap<String,String>) o;
-			return Integer.parseInt(hm.get("sc_id"));
-		}
-		return 1337;
-	}
 
 }

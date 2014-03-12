@@ -1,9 +1,5 @@
 package com.example.dota2;
 
-import java.net.MalformedURLException;
-import java.util.HashMap;
-import java.util.concurrent.ExecutionException;
-
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.app.Activity;
@@ -14,7 +10,6 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
