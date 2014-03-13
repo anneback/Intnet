@@ -18,17 +18,17 @@ public class ItemsActivity extends Activity{
         
         setContentView(R.layout.items_layout);
         
-        imageView = (ImageView) findViewById(R.id.imageView1);
-        Button button = (Button) findViewById(R.id.button1);
+        //imageView = (ImageView) findViewById(R.id.imageView1);
+        //Button button = (Button) findViewById(R.id.button1);
         final ItemModel IM = new ItemModel();
   
-        button.setOnClickListener(new View.OnClickListener() {
+        /*button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 					ArrayList<Item> items = IM.get_all_items();
 					//EXAMPLE
         			imageView.setImageBitmap(items.get(0).get_image());
             }
-        });
+        });*/
 
     }
 }
