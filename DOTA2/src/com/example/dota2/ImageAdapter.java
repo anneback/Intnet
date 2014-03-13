@@ -17,7 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.app.Activity;
 
-public class ImageAdapter extends ArrayAdapter implements OnClickListener{
+public class ImageAdapter extends ArrayAdapter{
 
 	private CartModel cart;
 	private Context ctx;
@@ -63,7 +63,7 @@ public class ImageAdapter extends ArrayAdapter implements OnClickListener{
 	            Button addToCart = (Button) cell.findViewById(R.id.add_to_cart);
 	            textView.setText(items[position].get_value("p_label")+"\n"+items[position].get_value("p_price"));
 	            imageView.setImageBitmap(items[position].get_image());
-	            addToCart.setOnClickListener(this);
+	            addToCart.setOnClickListener(new ItemOnClickListener(cart,items[position].get_value("p_id"), sc_id));
 	          } else {
 	            cell = (View) convertView;
 	          }
@@ -77,14 +77,15 @@ public class ImageAdapter extends ArrayAdapter implements OnClickListener{
 		Integer sc_id;
 		
 		
-		public ItemOnClickListener (String pid, Integer scid) {
+		public ItemOnClickListener (CartModel cm, String pid, Integer scid) {
 			this.p_id = pid;
 			this.sc_id = scid;
+			this.cm = cm;
 		}
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			cm.add_item_to_cart(p_id,sc_id);
+			cm.add_item_to_cart(p_id, sc_id);
 		}
 	}
 
