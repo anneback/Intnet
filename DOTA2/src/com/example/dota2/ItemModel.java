@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 public class ItemModel {
-	private String api_url="http://130.229.168.72/test.php";
+	private String api_url="http://130.229.128.190/test.php";
 	ArrayList<Item> items;
 	public ItemModel(){
 		items= new ArrayList<Item>();
@@ -33,6 +33,7 @@ public class ItemModel {
 			e.printStackTrace();
 		}
 		for(Object o:res){
+			@SuppressWarnings("unchecked")
 			HashMap<String,String> hm=(HashMap<String,String>) o;
 			Item i= new Item(new Post(hm));
 			items.add(i);
