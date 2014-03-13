@@ -10,6 +10,7 @@ public class ItemModel {
 	ArrayList<Item> items;
 	public ItemModel(){
 		items= new ArrayList<Item>();
+
 	}
 	public ArrayList<Item> get_all_items(){
 		UploadThreadTask upt = null;

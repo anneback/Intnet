@@ -50,29 +50,6 @@ public class UserModel {
 		}
 		return 1337;
 	}
-	public Integer register_shopping_cart(Integer user_id){
-		
-		String[] args= new String[2];
-		args[0]="register_shopping_cart";
-		args[1]=user_id.toString();
 
-		Object[] res=null;
-		try {
-			UploadThreadTask upt= new UploadThreadTask(api_url);
-			res=upt.execute(args).get();
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			e.printStackTrace();
-		}
-		for(Object o:res){
-			@SuppressWarnings("unchecked")
-			HashMap<String,String> hm=(HashMap<String,String>) o;
-			return Integer.parseInt(hm.get("sc_id"));
-		}
-		return 1337;
-	}
 
 }

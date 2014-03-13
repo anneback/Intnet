@@ -30,8 +30,8 @@
             android:name="com.example.dota2.UserActivity"
             android:label="@string/title_activity_user"
             android:parentActivityName="com.example.dota2.MainActivity"
-            android:uiOptions="splitActionBarWhenNarrow"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:uiOptions="splitActionBarWhenNarrow" >
         </activity>
         <!-- Items Activity -->
         <activity
@@ -51,6 +51,10 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.dota2.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.dota2.CartActivity"
+            android:label="@string/title_activity_cart" >
         </activity>
     </application>
 
