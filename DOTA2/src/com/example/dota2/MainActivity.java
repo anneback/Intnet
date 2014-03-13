@@ -49,7 +49,7 @@ public class MainActivity extends Activity {
 				text=text+" Sc id: "+String.valueOf(preferences.getInt("sc_id", 1337));
 				Toast toast = Toast.makeText(context, text, duration);
 				toast.show();
-				Intent i = new Intent(MainActivity.this, CartActivity.class);
+				Intent i = new Intent(MainActivity.this, UserActivity.class);
 
 				startActivity(i);
 				//		setContentView(R.layout.items_layout);

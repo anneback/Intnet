@@ -18,6 +18,23 @@ public class CartModel {
 		}
 		return sum;
 	}
+	
+	public void add_item_to_cart(String p_id,Integer sc_id){
+		String args[]= new String[3];
+		args[0]="add_item_to_cart";
+		args[1]=p_id;
+		args[2]=sc_id.toString();
+	
+		UploadThreadTask upt;
+		try {
+			upt = new UploadThreadTask(api_url);
+			upt.execute(args);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 	public ArrayList<Item> get_shopping_cart_information(Integer sc_id){
 		String args[]= new String[2];
 		args[0]="total_price_for_shopping_cart";
