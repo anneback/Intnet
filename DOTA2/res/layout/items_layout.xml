@@ -21,5 +21,11 @@
         android:textSize="18sp"
         android:ellipsize="marquee">
     </TextView>
+
+    <Button
+        android:id="@+id/add_to_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_to_cart" />
      
 </LinearLayout>

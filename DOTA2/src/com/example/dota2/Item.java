@@ -5,7 +5,7 @@ import java.util.concurrent.ExecutionException;
 import android.graphics.Bitmap;
 
 public class Item {
-	
+
 	Post p;
 	Bitmap image;
 	public Item(Post p){

@@ -6,7 +6,6 @@ import java.util.concurrent.ExecutionException;
 
 public class UserModel {
 	
-
 	public UserModel(){
 		
 	}

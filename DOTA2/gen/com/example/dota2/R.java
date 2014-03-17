@@ -65,6 +65,7 @@ public final class R {
     }
     public static final class id {
         public static final int action_settings=0x7f080018;
+        public static final int add_to_cart=0x7f080016;
         public static final int cartlistview=0x7f080009;
         public static final int editText1=0x7f080004;
         public static final int editText2=0x7f080005;
@@ -76,7 +77,6 @@ public final class R {
         public static final int grid_item_label=0x7f080015;
         public static final int grid_of_fragments=0x7f080017;
         public static final int item_total=0x7f080013;
-        public static final int itemgridview=0x7f080016;
         public static final int itemid_0=0x7f080019;
         public static final int itemid_1=0x7f08001a;
         public static final int label=0x7f080010;
@@ -97,11 +97,9 @@ public final class R {
         public static final int activity_cart=0x7f030001;
         public static final int activity_main=0x7f030002;
         public static final int activity_user=0x7f030003;
-        public static final int heroes_layout=0x7f030004;
-        public static final int itemrow=0x7f030005;
-        public static final int items_layout=0x7f030006;
-        public static final int list_fragment=0x7f030007;
-        public static final int tabfragment=0x7f030008;
+        public static final int itemrow=0x7f030004;
+        public static final int items_layout=0x7f030005;
+        public static final int tabfragment=0x7f030006;
     }
     public static final class menu {
         public static final int admin=0x7f070000;
@@ -113,6 +111,7 @@ public final class R {
         public static final int Cart_total=0x7f050000;
         public static final int User_Cart=0x7f050001;
         public static final int action_settings=0x7f050003;
+        public static final int add_to_cart=0x7f050019;
         public static final int admin_form_title=0x7f050017;
         public static final int app_items=0x7f050012;
         public static final int app_name=0x7f050002;

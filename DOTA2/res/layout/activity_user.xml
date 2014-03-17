@@ -1,57 +1,4 @@
-<!--<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/user_container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:textColor="#d24726"
-    tools:context=".UserActivity" >
 
-    <GridView
-        android:id="@+id/user_grid"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:columnWidth="90dp"
-        android:stretchMode="columnWidth"
-        android:gravity="center"
-        android:numColumns="auto_fit" >
-    </GridView>
-
-    
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:orientation="horizontal"
-        android:weightSum="1.0" >
-        
-        <SearchView
-            android:id="@+id/searchBar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".8"
-            android:hint="@string/searchHint"
-            android:textColorHint="#d24726" >
-        </SearchView>
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".2"
-            android:text="@string/balance"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#ffd700" />
-            
-    </LinearLayout>
-    -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -61,15 +8,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
+    
+    
+    
 
 </RelativeLayout>
-	<!--
-     Balance and shopping cart 
-    <ListView
-        android:id="@+id/bottom_bar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" >
-    </ListView>
-	-->
