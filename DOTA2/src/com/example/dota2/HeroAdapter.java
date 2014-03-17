@@ -65,7 +65,7 @@ public class HeroAdapter extends ArrayAdapter{
 	            imageButton.setImageBitmap(heroes[position].get_image());
 	          //TODO IMPLEMENT
 	            //fetch and display the items that belongs to that hero
-	            //addToCart.setOnClickListener(new ItemOnClickListener(cart,heroes[position].get_value("h_id")));
+	            imageButton.setOnClickListener(new ItemOnClickListener(cart,heroes[position].get_value("h_id")));
 	          } else {
 	            cell = (View) convertView;
 	          }
@@ -86,7 +86,8 @@ public class HeroAdapter extends ArrayAdapter{
 			// TODO Auto-generated method stub
 			//change view to show items 
 			//cm.add_item_to_cart(p_id, sc_id);
-			Toast.makeText(ctx, "Clicked button: "+h_id, Toast.LENGTH_SHORT).show();
+			//Toast.makeText(v.getContext(), "Clicked button: "+h_id, Toast.LENGTH_SHORT).show();
+			Log.d("BUTTON", "Clicked hero #"+h_id+" in list");
 		}
 	}
 
