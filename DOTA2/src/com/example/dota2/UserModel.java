@@ -6,7 +6,7 @@ import java.util.concurrent.ExecutionException;
 
 public class UserModel {
 	
-	private String api_url="http://130.229.128.190/test.php";
+	private String api_url="http://130.229.143.175/test.php";
 	public UserModel(){
 		
 	}

@@ -9,9 +9,11 @@ import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.app.ListFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.app.FragmentManager;
 import android.support.v4.app.FragmentTabHost;
 import android.util.Log;
 import android.view.Menu;
@@ -22,7 +24,7 @@ public class UserActivity extends FragmentActivity implements TabListener{
 	private final String[] TAB_TEXTS = {
 			"Items",
 			"Heroes",
-			"Misc"};
+	"Cart"};
 
 	List<Fragment> fragList = new ArrayList<Fragment>();
 
@@ -56,30 +58,65 @@ public class UserActivity extends FragmentActivity implements TabListener{
 
 	@Override
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {
+		
 		Fragment f = null;
 		TabFragment tf = null;
+		CartFragment cf = null;
 
 		if (fragList.size() > tab.getPosition()) {
 			fragList.get(tab.getPosition());
 		}
-		
+
 		if (f == null) {
-			tf = new TabFragment();
-			Bundle data = new Bundle();
-			data.putInt("idx",  tab.getPosition());
-			tf.setArguments(data);
-			fragList.add(tf);
+			if(tab.getPosition() == 1) {
+				tf = new TabFragment();
+				Bundle data = new Bundle();
+				data.putInt("idx",  tab.getPosition());
+				tf.setArguments(data);
+				fragList.add(tf);
+			} else if (tab.getPosition() == 2){
+				cf = new CartFragment();
+				Bundle data = new Bundle();
+				data.putInt("idx",  tab.getPosition());
+				cf.setArguments(data);
+				fragList.add(cf);
+			} else {
+				tf = new TabFragment();
+				Bundle data = new Bundle();
+				data.putInt("idx",  tab.getPosition());
+				tf.setArguments(data);
+				fragList.add(tf);
+			}
 		} else {
 			tf = (TabFragment) f;
 		}
 		ft.replace(android.R.id.content, tf);
+		/*
+		if (tab.getPosition() == 1) {
+			TabFragment tabFragment = new TabFragment();
+			ft.replace(android.R.id.content, tabFragment);			
+			//ft.commit();
+		} 
+		else if (tab.getPosition() == 2) {
+			//FragmentTransaction ft = getFragmentManager().beginTransaction();
+			CartFragment cartFragment = new CartFragment();
+			ft.replace(android.R.id.content, cartFragment);
+			//ft.commit();
+		}
+
+		else {
+			TabFragment heroFragment = new TabFragment();
+			ft.replace(android.R.id.content, heroFragment);			
+			//ft.commit();
+		}*/
 	}
+
 
 	@Override
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 		if (fragList.size() > tab.getPosition()) {
 			ft.remove(fragList.get(tab.getPosition()));
 		}
-
 	}
+
 }

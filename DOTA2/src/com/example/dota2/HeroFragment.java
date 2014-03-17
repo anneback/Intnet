@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 
-public class TabFragment extends Fragment{
+public class HeroFragment extends Fragment{
 	
 	private int index;
 	
