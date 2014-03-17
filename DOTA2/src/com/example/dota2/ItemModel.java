@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 public class ItemModel {
-	private String api_url="http://130.229.128.190/test.php";
+
 	ArrayList<Item> items;
 	public ItemModel(){
 		items= new ArrayList<Item>();
@@ -17,7 +17,7 @@ public class ItemModel {
 		//String res="";
 		Object[] res=null;
 		try {
-			upt = new UploadThreadTask(api_url);
+			upt = new UploadThreadTask(Config.api_url);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

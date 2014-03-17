@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 public class CartModel {
-	private String api_url="http://130.229.128.190/test.php";
+	
 	private ArrayList<Item> cartItems;
 	public CartModel(){
 		cartItems= new ArrayList<Item>();
@@ -27,7 +27,7 @@ public class CartModel {
 	
 		UploadThreadTask upt;
 		try {
-			upt = new UploadThreadTask(api_url);
+			upt = new UploadThreadTask(Config.api_url);
 			upt.execute(args);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
@@ -41,7 +41,7 @@ public class CartModel {
 		args[1]=sc_id.toString();
 		Object[] res=null;
 		try {
-			UploadThreadTask upt = new UploadThreadTask(api_url);
+			UploadThreadTask upt = new UploadThreadTask(Config.api_url);
 			res=upt.execute(args).get();
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
@@ -72,7 +72,7 @@ public class CartModel {
 
 		Object[] res=null;
 		try {
-			UploadThreadTask upt= new UploadThreadTask(api_url);
+			UploadThreadTask upt= new UploadThreadTask(Config.api_url);
 			res=upt.execute(args).get();
 		} catch (MalformedURLException e) {
 			e.printStackTrace();

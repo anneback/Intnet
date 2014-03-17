@@ -35,9 +35,11 @@ public class UserActivity extends FragmentActivity implements TabListener{
 
 		for (int i=0; i < 3; i++) {
 			Tab tab = bar.newTab();
+			
 			tab.setText(TAB_TEXTS[i]);
 			tab.setTabListener(this);
 			bar.addTab(tab);
+			
 
 		}
 	}

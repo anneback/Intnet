@@ -7,15 +7,14 @@ import java.util.concurrent.ExecutionException;
 import android.util.Log;
 
 public class AdminModel {
-	private String image_url="http://130.229.128.190/upload.php";
-	private String api_url="http://130.229.128.190/test.php";
+
 	
 	public AdminModel(){
 		
 	}
 	public void upload_image(String filePath,String filename){
 		UploadImageTask uploadThread= new UploadImageTask();
-		String[] args={image_url,filePath,filename};
+		String[] args={Config.image_url,filePath,filename};
 		uploadThread.execute(args);
 		
 	}
@@ -24,7 +23,7 @@ public class AdminModel {
 		//String res="";
 		Object[] res=null;
 		try {
-			upt = new UploadThreadTask(api_url);
+			upt = new UploadThreadTask(Config.api_url);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
