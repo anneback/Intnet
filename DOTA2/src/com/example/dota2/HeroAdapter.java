@@ -21,6 +21,7 @@ public class HeroAdapter extends ArrayAdapter{
 	private Hero[] heroes;
 	private Integer sc_id;
 	
+	
 	public HeroAdapter(Context c, Hero[] heroes)
 	{
 		super(c, 0);
