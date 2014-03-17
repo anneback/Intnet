@@ -5,13 +5,17 @@ import java.util.concurrent.ExecutionException;
 import android.graphics.Bitmap;
 
 public class Item {
+<<<<<<< HEAD
 	private static final String SERVER_URL ="http://130.229.143.175";
+=======
+	
+>>>>>>> dacd1efb1dc787204ef615c84ef7506871cfdac5
 	Post p;
 	Bitmap image;
 	public Item(Post p){
 		this.p=p;
 		//Retrieve and set Image from server
-		set_image(SERVER_URL+get_value("p_image"));
+		set_image(Config.SERVER_URL+get_value("p_image"));
 	}
 	public void set_image(String url){
 		GetImageTask GIT=new GetImageTask();

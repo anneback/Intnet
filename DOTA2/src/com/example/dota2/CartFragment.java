@@ -15,26 +15,27 @@ import android.widget.TextView;
 public class CartFragment extends Fragment {
 
 	@Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
-   	 View view =  inflater.inflate(R.layout.activity_cart, container, false);
-   	CartModel cm= new CartModel();
-	SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this.getActivity().getBaseContext());
-	Integer sc_id= preferences.getInt("sc_id", -1);
-	ItemListAdapter adapter= null;
-	if(sc_id!=-1){
-		adapter = new ItemListAdapter(view.getContext(), cm.get_shopping_cart_information(sc_id));
-	
-	 
-    // 2. Get ListView from activity_main.xml
-    ListView listView = (ListView) this.getActivity().findViewById(R.id.cartlistview);
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		View view =  inflater.inflate(R.layout.activity_cart, container, false);
+		ListView listView = (ListView) view.findViewById(R.id.cartlistview);
+		CartModel cm= new CartModel();
+		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this.getActivity().getBaseContext());
+		Integer sc_id= preferences.getInt("sc_id", -1);
+		ItemListAdapter adapter= null;
+		
+		if(sc_id!=-1){
+			adapter = new ItemListAdapter(view.getContext(), cm.get_shopping_cart_information(sc_id));
 
-    // 3. setListAdapter
-    listView.setAdapter(adapter);
-    TextView allInAllTotal = (TextView) this.getActivity().findViewById(R.id.textView1);
-    allInAllTotal.setText("Total amount to pay: "+String.valueOf((cm.get_total_price())));
-	}
-   	 return view;
+
+			// 2. Get ListView from activity_main.xml
+
+			// 3. setListAdapter
+			listView.setAdapter(adapter);
+			TextView allInAllTotal = (TextView) view.findViewById(R.id.textView1);
+			allInAllTotal.setText("Total amount to pay: "+String.valueOf((cm.get_total_price())));
+		}
+		return view;
 	}
 
 

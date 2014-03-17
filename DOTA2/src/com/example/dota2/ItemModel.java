@@ -6,7 +6,11 @@ import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 public class ItemModel {
+<<<<<<< HEAD
 	private String api_url="http://130.229.143.175/test.php";
+=======
+
+>>>>>>> dacd1efb1dc787204ef615c84ef7506871cfdac5
 	ArrayList<Item> items;
 	public ItemModel(){
 		items= new ArrayList<Item>();
@@ -17,13 +21,13 @@ public class ItemModel {
 		//String res="";
 		Object[] res=null;
 		try {
-			upt = new UploadThreadTask(api_url);
+			upt = new UploadThreadTask(Config.api_url);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		String[] arr={"get_item_category","Items"};
-		
+
 		try {
 			res = upt.execute(arr).get();
 		} catch (InterruptedException e) {
@@ -33,11 +37,13 @@ public class ItemModel {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		for(Object o:res){
-			@SuppressWarnings("unchecked")
-			HashMap<String,String> hm=(HashMap<String,String>) o;
-			Item i= new Item(new Post(hm));
-			items.add(i);
+		if(res!=null){
+			for(Object o:res){
+				@SuppressWarnings("unchecked")
+				HashMap<String,String> hm=(HashMap<String,String>) o;
+				Item i= new Item(new Post(hm));
+				items.add(i);
+			}
 		}
 		return items;
 	}

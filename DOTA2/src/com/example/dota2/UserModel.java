@@ -6,7 +6,11 @@ import java.util.concurrent.ExecutionException;
 
 public class UserModel {
 	
+<<<<<<< HEAD
 	private String api_url="http://130.229.143.175/test.php";
+=======
+
+>>>>>>> dacd1efb1dc787204ef615c84ef7506871cfdac5
 	public UserModel(){
 		
 	}
@@ -17,7 +21,7 @@ public class UserModel {
 		args[2] = sc_id.toString();
 		UploadThreadTask upt=null;
 		try {
-			upt = new UploadThreadTask(api_url);
+			upt = new UploadThreadTask(Config.api_url);
 			upt.execute(args);
 			return true;
 		} catch (MalformedURLException e) {
@@ -34,7 +38,7 @@ public class UserModel {
 		args[2]=userPassword;
 		Object[] res=null;
 		try {
-			UploadThreadTask upt= new UploadThreadTask(api_url);
+			UploadThreadTask upt= new UploadThreadTask(Config.api_url);
 			res=upt.execute(args).get();
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
