@@ -25,7 +25,7 @@ public class CartFragment extends Fragment {
 		ItemListAdapter adapter= null;
 		
 		if(sc_id!=-1){
-			adapter = new ItemListAdapter(view.getContext(), cm.get_shopping_cart_information(sc_id));
+			adapter = new ItemListAdapter(getActivity(), cm.get_shopping_cart_information(sc_id));
 
 
 			// 2. Get ListView from activity_main.xml

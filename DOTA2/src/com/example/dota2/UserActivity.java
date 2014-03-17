@@ -41,8 +41,7 @@ public class UserActivity extends Activity{
 				.setTabListener(new TabListener<TabFragment>(this, "Items", TabFragment.class)));
 		bar.addTab(bar.newTab()
 				.setText("Cart")
-				.setTabListener(new TabListener<CartFragment>(
-						this, "Cart",CartFragment.class)));
+				.setTabListener(new TabListener<CartFragment>(this, "Cart",CartFragment.class)));
 
 
 		if (savedInstanceState != null) {
