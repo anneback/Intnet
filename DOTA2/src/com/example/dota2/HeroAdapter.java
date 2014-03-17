@@ -61,7 +61,7 @@ public class HeroAdapter extends ArrayAdapter{
 	            textView.setText(heroes[position].get_value("h_name"));
 	            imageView.setImageBitmap(heroes[position].get_image());
 	          //TODO IMPLEMENT
-	            addToCart.setOnClickListener(new ItemOnClickListener(cart,heroes[position].get_value("p_id"), sc_id));
+	            addToCart.setOnClickListener(new ItemOnClickListener(cart,heroes[position].get_value("h_id")));
 	          } else {
 	            cell = (View) convertView;
 	          }
@@ -70,20 +70,18 @@ public class HeroAdapter extends ArrayAdapter{
 	}
 	
 	public class ItemOnClickListener implements OnClickListener{
-		CartModel cm;
-		String p_id;
-		Integer sc_id;
+		String h_id;
 		
 		
-		public ItemOnClickListener (CartModel cm, String pid, Integer scid) {
-			this.p_id = pid;
-			this.sc_id = scid;
-			this.cm = cm;
+		public ItemOnClickListener (CartModel cm, String hid) {
+			this.h_id = hid;
+			
 		}
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			cm.add_item_to_cart(p_id, sc_id);
+			//change view to show items 
+			//cm.add_item_to_cart(p_id, sc_id);
 		}
 	}
 
