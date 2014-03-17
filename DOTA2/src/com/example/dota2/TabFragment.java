@@ -15,8 +15,8 @@ public class TabFragment extends Fragment{
 	
 	public void onCreate(Bundle savedInstanceState) {        
 	    super.onCreate(savedInstanceState);
-	    Bundle data = getArguments();
-	    index = data.getInt("idx");
+	    //Bundle data = getArguments();
+	   // index = data.getInt("idx");
 	}
 
 	@Override
