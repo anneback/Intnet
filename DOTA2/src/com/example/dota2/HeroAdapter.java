@@ -91,12 +91,10 @@ public class HeroAdapter extends ArrayAdapter{
 			// TODO Auto-generated method stub
 			//change view to show items 
 			//cm.add_item_to_cart(p_id, sc_id);
-<<<<<<< HEAD
-//			Toast.makeText(v.getContext(), "Clicked button: "+h_id, Toast.LENGTH_SHORT).show();
-=======
+
 			//Toast.makeText(v.getContext(), "Clicked button: "+h_id, Toast.LENGTH_SHORT).show();
 			Log.d("BUTTON", "Clicked hero #"+h_id+" in list");
->>>>>>> 3eb9d2d58fe939ffc1845678520eb3a42afe7686
+
 		}
 	}
 
