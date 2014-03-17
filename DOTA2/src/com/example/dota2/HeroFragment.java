@@ -12,15 +12,6 @@ import android.widget.GridView;
 
 public class HeroFragment extends Fragment{
 	
-	private int index;
-	
-	public void onCreate(Bundle savedInstanceState) {        
-	    super.onCreate(savedInstanceState);
-	    Bundle data = getArguments();
-	    Log.i(getTag(), "TabFragment, Bundle data   "+data);
-	    index = data.getInt("idx");
-	}
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 	        Bundle savedInstanceState) {

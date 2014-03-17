@@ -5,6 +5,7 @@ import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -25,11 +26,8 @@ public class CartFragment extends Fragment {
 		ItemListAdapter adapter= null;
 		
 		if(sc_id!=-1){
-			adapter = new ItemListAdapter(view.getContext(), cm.get_shopping_cart_information(sc_id));
-
-
-			// 2. Get ListView from activity_main.xml
-
+			adapter = new ItemListAdapter(getActivity(), cm.get_shopping_cart_information(sc_id));
+			
 			// 3. setListAdapter
 			listView.setAdapter(adapter);
 			TextView allInAllTotal = (TextView) view.findViewById(R.id.textView1);

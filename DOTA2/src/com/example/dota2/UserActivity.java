@@ -18,8 +18,6 @@ import android.app.FragmentManager;
 import android.support.v4.app.FragmentTabHost;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Toast;
 
 public class UserActivity extends FragmentActivity implements ActionBar.TabListener{
 
@@ -63,26 +61,27 @@ public class UserActivity extends FragmentActivity implements ActionBar.TabListe
 
 	@Override
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {
-		
+		/*
 		Fragment f = null;
 		TabFragment tf = null;
-		CartFragment cf = null;
+		HeroFragment cf = null;
 
 		if (fragList.size() > tab.getPosition()) {
 			fragList.get(tab.getPosition());
 		}
 
 		if (f == null) {
-			if(tab.getPosition() == 1) {
-				tf = new TabFragment();
+			if(tab.getPosition() == 0) {
 				Bundle data = new Bundle();
 				data.putInt("idx",  tab.getPosition());
+				tf = new TabFragment();
 				tf.setArguments(data);
 				fragList.add(tf);
-			} else if (tab.getPosition() == 2){
-				cf = new CartFragment();
+			} else if (tab.getPosition() == 1){
+				Log.d("POS 1","POS 1 ="+tab.getPosition());
 				Bundle data = new Bundle();
 				data.putInt("idx",  tab.getPosition());
+				cf = new HeroFragment();
 				cf.setArguments(data);
 				fragList.add(cf);
 			} else {
@@ -95,7 +94,7 @@ public class UserActivity extends FragmentActivity implements ActionBar.TabListe
 		} else {
 			tf = (TabFragment) f;
 		}
-		ft.replace(android.R.id.content, tf);
+		ft.replace(android.R.id.content, tf);*/
 		
 		if (tab.getPosition() == 1) {
 			TabFragment tabFragment = new TabFragment();
