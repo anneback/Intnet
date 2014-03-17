@@ -18,7 +18,8 @@ public class ItemFragment extends Fragment{
 	    View v = inflater.inflate(R.layout.tabfragment, null);
 	    GridView gridView = (GridView) v.findViewById(R.id.grid_of_fragments);
 	    ItemModel im = new ItemModel();
-	    ArrayList<Item> temp = im.get_all_items(); 
+	    ArrayList<Item> temp = im.get_all_items();
+	    
 	    Item[] items = new Item[temp.size()];
 	    for(int i = 0; i < items.length; i++) {
 	    	items[i] = temp.get(i);

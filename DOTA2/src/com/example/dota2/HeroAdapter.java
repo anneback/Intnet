@@ -2,6 +2,7 @@ package com.example.dota2;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -66,7 +67,7 @@ public class HeroAdapter extends ArrayAdapter{
 	            imageButton.setImageBitmap(heroes[position].get_image());
 	          //TODO IMPLEMENT
 	            //fetch and display the items that belongs to that hero
-	            //addToCart.setOnClickListener(new ItemOnClickListener(cart,heroes[position].get_value("h_id")));
+	            imageButton.setOnClickListener(new ItemOnClickListener(cart,heroes[position].get_value("h_id")));
 	          } else {
 	            cell = (View) convertView;
 	          }
@@ -84,10 +85,13 @@ public class HeroAdapter extends ArrayAdapter{
 		}
 		@Override
 		public void onClick(View v) {
+			Intent i = new Intent(ctx.getApplicationContext(), UserActivity.class);
+
+			ctx.getApplicationContext().startActivity(i);
 			// TODO Auto-generated method stub
 			//change view to show items 
 			//cm.add_item_to_cart(p_id, sc_id);
-			Toast.makeText(ctx, "Clicked button: "+h_id, Toast.LENGTH_SHORT).show();
+//			Toast.makeText(v.getContext(), "Clicked button: "+h_id, Toast.LENGTH_SHORT).show();
 		}
 	}
 
