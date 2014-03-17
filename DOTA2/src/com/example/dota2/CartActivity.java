@@ -16,9 +16,9 @@ public class CartActivity extends Activity {
 		CartModel cm= new CartModel();
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 		Integer sc_id= preferences.getInt("sc_id", -1);
-		ItemListAdapter adapter= null;
+		CartListAdapter adapter= null;
 		if(sc_id!=-1){
-			adapter = new ItemListAdapter(this, cm.get_shopping_cart_information(sc_id));
+			adapter = new CartListAdapter(this, cm.get_shopping_cart_information(sc_id));
 		
 		 
         // 2. Get ListView from activity_main.xml

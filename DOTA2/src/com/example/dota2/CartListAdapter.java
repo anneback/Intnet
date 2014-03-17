@@ -10,12 +10,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
  
-public class ItemListAdapter extends ArrayAdapter<Item> {
+public class CartListAdapter extends ArrayAdapter<Item> {
  
         private final Context context;
         private final ArrayList<Item> itemsArrayList;
  
-        public ItemListAdapter(Context context, ArrayList<Item> itemsArrayList) {
+        public CartListAdapter(Context context, ArrayList<Item> itemsArrayList) {
  
             super(context, R.layout.itemrow, itemsArrayList);
  

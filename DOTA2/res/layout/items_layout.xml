@@ -16,9 +16,9 @@
         android:id="@+id/grid_item_label"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_below="@+id/grid_item_image"
+        android:layout_above="@+id/grid_item_image"
         android:layout_marginTop="2dp"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:ellipsize="marquee">
     </TextView>
 
@@ -26,6 +26,7 @@
         android:id="@+id/add_to_cart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_to_cart" />
+        android:text="@string/add_to_cart"
+        android:textSize="11sp" />
      
 </LinearLayout>
