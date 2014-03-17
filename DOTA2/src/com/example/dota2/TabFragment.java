@@ -16,16 +16,10 @@ public class TabFragment extends Fragment{
 	
 	public void onCreate(Bundle savedInstanceState) {        
 	    super.onCreate(savedInstanceState);
-<<<<<<< HEAD
 	    Bundle data = getArguments();
 	    Log.i(getTag(), "TabFragment, Bundle data   "+data);
 	    index = data.getInt("idx");
-=======
-	    //Bundle data = getArguments();
-	   // index = data.getInt("idx");
->>>>>>> dacd1efb1dc787204ef615c84ef7506871cfdac5
 	}
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 	        Bundle savedInstanceState) {
