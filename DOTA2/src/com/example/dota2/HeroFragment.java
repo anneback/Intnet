@@ -18,14 +18,14 @@ public class HeroFragment extends Fragment{
 		
 	    View v = inflater.inflate(R.layout.tabfragment, null);
 	    GridView gridView = (GridView) v.findViewById(R.id.grid_of_fragments);
-	    ItemModel im = new ItemModel();
-	    ArrayList<Item> temp = im.get_all_items(); 
-	    Item[] items = new Item[temp.size()];
-	    for(int i = 0; i < items.length; i++) {
-	    	items[i] = temp.get(i);
+	    HeroModel hm = new HeroModel();
+	    ArrayList<Hero> tmp= hm.get_all_heroes();
+	    Hero[] heroes = new Hero[tmp.size()];
+	    for(int i = 0; i < heroes.length; i++) {
+	    	heroes[i] = tmp.get(i);
 	    }
 	    
-	    gridView.setAdapter(new ImageAdapter(getActivity(), items));
+	    gridView.setAdapter(new HeroAdapter(getActivity(), heroes));
 
 	    return v;
 	}
