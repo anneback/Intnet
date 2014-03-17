@@ -23,7 +23,7 @@ public class ItemModel {
 			e.printStackTrace();
 		}
 		String[] arr={"get_item_category","Items"};
-		
+
 		try {
 			res = upt.execute(arr).get();
 		} catch (InterruptedException e) {
@@ -33,11 +33,13 @@ public class ItemModel {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		for(Object o:res){
-			@SuppressWarnings("unchecked")
-			HashMap<String,String> hm=(HashMap<String,String>) o;
-			Item i= new Item(new Post(hm));
-			items.add(i);
+		if(res!=null){
+			for(Object o:res){
+				@SuppressWarnings("unchecked")
+				HashMap<String,String> hm=(HashMap<String,String>) o;
+				Item i= new Item(new Post(hm));
+				items.add(i);
+			}
 		}
 		return items;
 	}
