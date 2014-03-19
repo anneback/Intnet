@@ -2,10 +2,14 @@ package com.example.dota2;
 
 import android.app.Activity;
 import android.app.FragmentTransaction;
+<<<<<<< HEAD
 import android.app.FragmentManager;
+=======
+>>>>>>> 5ffe709c54e0422c72c9b6d01b44a55c3b34b7ed
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,13 +17,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.example.dota2.ImageAdapter.ItemOnClickListener;
 
 public class HeroAdapter extends ArrayAdapter{
 	private CartModel cart;
@@ -32,6 +31,7 @@ public class HeroAdapter extends ArrayAdapter{
 	{
 		super(c, 0);
 		ctx=c;
+		
 		this.heroes = heroes;
 		this.cart = new CartModel();
 		SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences((Activity) ctx);
@@ -86,6 +86,7 @@ public class HeroAdapter extends ArrayAdapter{
 			
 		}
 		public void onClick(View v) {
+<<<<<<< HEAD
 			Intent i = new Intent(ctx, UserActivity.class);
 			//FragmentManager fm = getSupportFragmentManager().beginTransaction();
 			//ItemFragment itemFragment = new ItemFragment();
@@ -95,8 +96,25 @@ public class HeroAdapter extends ArrayAdapter{
 			// TODO Auto-generated method stub
 			//change view to show items 
 			//cm.add_item_to_cart(p_id, sc_id);
+=======
 
-			//Toast.makeText(v.getContext(), "Clicked button: "+h_id, Toast.LENGTH_SHORT).show();
+			ItemFragment newFragment = new ItemFragment();
+			Bundle bundle = new Bundle();
+			bundle.putString("h_id", h_id);
+			// set Fragmentclass Arguments
+		
+			newFragment.setArguments(bundle);
+			FragmentTransaction transaction = ((Activity)ctx).getFragmentManager().beginTransaction();
+>>>>>>> 5ffe709c54e0422c72c9b6d01b44a55c3b34b7ed
+
+			// Replace whatever is in the fragment_container view with this fragment,
+			// and add the transaction to the back stack
+			transaction.replace(android.R.id.content, newFragment);
+			transaction.addToBackStack(null);
+
+			// Commit the transaction
+			transaction.commit();
+		
 			Log.d("BUTTON", "Clicked hero #"+h_id+" in list");
 
 		}

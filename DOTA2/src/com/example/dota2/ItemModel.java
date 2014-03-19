@@ -12,7 +12,7 @@ public class ItemModel {
 		items= new ArrayList<Item>();
 
 	}
-	public ArrayList<Item> get_item_by_hero(Integer h_id){
+	public ArrayList<Item> get_item_by_hero(String h_id){
 		ArrayList<Item> items= new ArrayList<Item>();
 		UploadThreadTask upt = null;
 		//String res="";
@@ -23,7 +23,7 @@ public class ItemModel {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		String[] arr={"get_items_by_hero_name",h_id.toString()};
+		String[] arr={"get_items_by_hero_name",h_id};
 
 		try {
 			res = upt.execute(arr).get();

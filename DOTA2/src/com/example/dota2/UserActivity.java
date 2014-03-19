@@ -17,7 +17,7 @@ public class UserActivity extends FragmentActivity implements ActionBar.TabListe
 	private final String[] TAB_TEXTS = {
 			"Items",
 			"Heroes",
-	"Cart"};
+			"Cart"};
 
 
 	List<Fragment> fragList = new ArrayList<Fragment>();
@@ -39,6 +39,7 @@ public class UserActivity extends FragmentActivity implements ActionBar.TabListe
 
 
 		}
+		
 	}
 
 	@Override
