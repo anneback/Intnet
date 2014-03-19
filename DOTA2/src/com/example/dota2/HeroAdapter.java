@@ -81,8 +81,8 @@ public class HeroAdapter extends ArrayAdapter{
 			this.h_id = hid;
 			
 		}
-		@Override
 		public void onClick(View v) {
+
 
 			ItemFragment newFragment = new ItemFragment();
 			Bundle bundle = new Bundle();

@@ -67,7 +67,7 @@ public class UserActivity extends FragmentActivity implements ActionBar.TabListe
 		}
 		else {
 			ItemFragment tabFragment = new ItemFragment();
-			ft.replace(android.R.id.content, tabFragment);		
+			ft.replace(android.R.id.content, tabFragment);
 		}
 	}
 
