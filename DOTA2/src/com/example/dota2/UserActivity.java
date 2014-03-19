@@ -6,17 +6,10 @@ import java.util.List;
 import com.example.dota2.R;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
-import android.app.ActionBar.TabListener;
-import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.app.ListFragment;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.app.FragmentManager;
-import android.support.v4.app.FragmentTabHost;
-import android.util.Log;
 import android.view.Menu;
 
 public class UserActivity extends FragmentActivity implements ActionBar.TabListener{
@@ -73,7 +66,7 @@ public class UserActivity extends FragmentActivity implements ActionBar.TabListe
 		}
 		else {
 			ItemFragment tabFragment = new ItemFragment();
-			ft.replace(android.R.id.content, tabFragment);		
+			ft.replace(android.R.id.content, tabFragment);
 		}
 	}
 

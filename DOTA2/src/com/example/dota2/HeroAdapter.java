@@ -1,6 +1,8 @@
 package com.example.dota2;
 
 import android.app.Activity;
+import android.app.FragmentTransaction;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -83,11 +85,13 @@ public class HeroAdapter extends ArrayAdapter{
 			this.h_id = hid;
 			
 		}
-		@Override
 		public void onClick(View v) {
-			Intent i = new Intent(ctx.getApplicationContext(), UserActivity.class);
-
-			ctx.getApplicationContext().startActivity(i);
+			Intent i = new Intent(ctx, UserActivity.class);
+			//FragmentManager fm = getSupportFragmentManager().beginTransaction();
+			//ItemFragment itemFragment = new ItemFragment();
+			//getFragmentManager()
+			//ft.replace(android.R.id.content, itemFragment);
+			ctx.startActivity(i);
 			// TODO Auto-generated method stub
 			//change view to show items 
 			//cm.add_item_to_cart(p_id, sc_id);
