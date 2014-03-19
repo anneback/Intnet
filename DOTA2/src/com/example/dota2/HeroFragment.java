@@ -2,7 +2,6 @@ package com.example.dota2;
 
 import java.util.ArrayList;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,9 +11,6 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 
 public class HeroFragment extends Fragment{
-	
-	
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 	        Bundle savedInstanceState) {
@@ -28,7 +24,6 @@ public class HeroFragment extends Fragment{
 	    for(int i = 0; i < heroes.length; i++) {
 	    	heroes[i] = tmp.get(i);
 	    }
-	    
 	    
 	    gridView.setAdapter(new HeroAdapter(getActivity(), heroes));
 
