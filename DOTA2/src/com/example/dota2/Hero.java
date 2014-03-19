@@ -17,6 +17,7 @@ public class Hero {
 	public Hero(Post p,Context ctx){
 		this.p=p;
 		this.ctx=ctx;
+		Log.d("HERO","CALLING WITH PARAMETER: "+get_value("h_image"));
 		int imageResource =ctx.getResources().getIdentifier(get_value("h_image"), "drawable", ctx.getPackageName());
 		image = BitmapFactory.decodeResource(ctx.getResources(), imageResource);
 	}
