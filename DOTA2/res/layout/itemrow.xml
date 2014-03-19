@@ -38,4 +38,13 @@
         android:textSize="12sp" >
     </TextView>
 
+    <Button
+        android:id="@+id/remove_from_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/remove_from_cart"
+        android:textSize="11sp" />
+
 </RelativeLayout>

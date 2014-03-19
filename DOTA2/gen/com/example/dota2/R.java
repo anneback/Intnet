@@ -64,8 +64,8 @@ public final class R {
         public static final int tab_unselected_pressed_example=0x7f020028;
     }
     public static final class id {
-        public static final int action_settings=0x7f08001a;
-        public static final int add_to_cart=0x7f080018;
+        public static final int action_settings=0x7f08001b;
+        public static final int add_to_cart=0x7f080019;
         public static final int cartlistview=0x7f080009;
         public static final int editText1=0x7f080004;
         public static final int editText2=0x7f080005;
@@ -73,20 +73,21 @@ public final class R {
         public static final int editText4=0x7f080007;
         public static final int email=0x7f08000c;
         public static final int fullscreen_content=0x7f08000a;
-        public static final int grid_item_image=0x7f080016;
-        public static final int grid_item_label=0x7f080017;
-        public static final int grid_of_fragments=0x7f080019;
+        public static final int grid_item_image=0x7f080017;
+        public static final int grid_item_label=0x7f080018;
+        public static final int grid_of_fragments=0x7f08001a;
         public static final int hero_button=0x7f080010;
         public static final int hero_name=0x7f080011;
         public static final int item_total=0x7f080015;
-        public static final int itemid_0=0x7f08001b;
-        public static final int itemid_1=0x7f08001c;
+        public static final int itemid_0=0x7f08001c;
+        public static final int itemid_1=0x7f08001d;
         public static final int label=0x7f080012;
         public static final int login_button=0x7f08000e;
         public static final int main_image=0x7f08000b;
         public static final int password=0x7f08000d;
         public static final int quantity=0x7f080014;
         public static final int register_link=0x7f08000f;
+        public static final int remove_from_cart=0x7f080016;
         public static final int scrollView1=0x7f080000;
         public static final int selectImageButton=0x7f080002;
         public static final int textView1=0x7f080001;
@@ -127,6 +128,7 @@ public final class R {
         public static final int logout=0x7f050014;
         public static final int newapi=0x7f050011;
         public static final int password_hint=0x7f050005;
+        public static final int remove_from_cart=0x7f05001a;
         public static final int searchHint=0x7f05000c;
         public static final int splash_pic=0x7f050009;
         public static final int text_register=0x7f050007;
