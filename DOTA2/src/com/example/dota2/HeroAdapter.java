@@ -2,10 +2,6 @@ package com.example.dota2;
 
 import android.app.Activity;
 import android.app.FragmentTransaction;
-<<<<<<< HEAD
-import android.app.FragmentManager;
-=======
->>>>>>> 5ffe709c54e0422c72c9b6d01b44a55c3b34b7ed
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -86,17 +82,7 @@ public class HeroAdapter extends ArrayAdapter{
 			
 		}
 		public void onClick(View v) {
-<<<<<<< HEAD
-			Intent i = new Intent(ctx, UserActivity.class);
-			//FragmentManager fm = getSupportFragmentManager().beginTransaction();
-			//ItemFragment itemFragment = new ItemFragment();
-			//getFragmentManager()
-			//ft.replace(android.R.id.content, itemFragment);
-			ctx.startActivity(i);
-			// TODO Auto-generated method stub
-			//change view to show items 
-			//cm.add_item_to_cart(p_id, sc_id);
-=======
+
 
 			ItemFragment newFragment = new ItemFragment();
 			Bundle bundle = new Bundle();
@@ -105,7 +91,6 @@ public class HeroAdapter extends ArrayAdapter{
 		
 			newFragment.setArguments(bundle);
 			FragmentTransaction transaction = ((Activity)ctx).getFragmentManager().beginTransaction();
->>>>>>> 5ffe709c54e0422c72c9b6d01b44a55c3b34b7ed
 
 			// Replace whatever is in the fragment_container view with this fragment,
 			// and add the transaction to the back stack
