@@ -14,11 +14,23 @@ public class ItemFragment extends Fragment{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 	        Bundle savedInstanceState) {
-		
+	    ItemModel im = new ItemModel();
+	    Bundle bundle = this.getArguments();
+	    String h_id=null;
+	    if(bundle!=null){
+	    	  h_id = bundle.getString("h_id");
+	    }
+      
+		ArrayList<Item> temp=null;
+		if(h_id!=null){
+			temp = im.get_item_by_hero(h_id);
+		}else{
+		    temp = im.get_all_items();
+		}
 	    View v = inflater.inflate(R.layout.tabfragment, null);
 	    GridView gridView = (GridView) v.findViewById(R.id.grid_of_fragments);
-	    ItemModel im = new ItemModel();
-	    ArrayList<Item> temp = im.get_all_items();
+	
+
 	    
 	    Item[] items = new Item[temp.size()];
 	    for(int i = 0; i < items.length; i++) {
