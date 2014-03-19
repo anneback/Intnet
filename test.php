@@ -28,7 +28,7 @@ function add_item($method, $params){
 	if(!$link){
 		return "no database connection";
 	}
-	$query="insert into product(p_label,p_desc,p_image,p_hero,p_price) values('".$params[1]."','".$params[2]."','".$params[3]."','".$params[4]."','".$params[5]."')";
+	$query="insert into product(p_label,p_desc,p_image,h_id,p_price) values('".$params[1]."','".$params[2]."','".$params[3]."',".$params[4].",'".$params[5]."')";
 	$result = pg_exec($link,$query);
 	$content=pg_fetch_all($result);
 	pg_close($link);
@@ -95,11 +95,33 @@ function add_to_shopping_cart($method,$params){
 		return "no database connection";
 	}
 	// IF already exist then update otherwise insert.(no side effects)
-	$update_query="update into shopping_cart_item set quantity=quantity+1 where p_id=".$params[1]." and sc_id=".$params[2];
+	$update_query="update shopping_cart_item set quantity=quantity+1 where p_id=".$params[1]." and sc_id=".$params[2];
 	$result = pg_exec($link,$update_query);
 	$insert_query= "insert into shopping_cart_item(p_id,sc_id,quantity) values(".$params[1].",".$params[2].",1)";
 	$result = pg_exec($link,$insert_query);
 	$content = pg_fetch_all($result);
+	pg_close($link);
+	return $content;
+}
+
+function remove_from_shopping_cart($method,$params){
+	$link = pg_connect("host=127.0.0.1 dbname=postgres user=postgres password=postgres");
+	if(!$link){
+		return "no database connection";
+	}
+	$select_query="select quantity from shopping_cart_item where p_id=".$params[1]." and sc_id=".$params[2];
+	$result=pg_exec($link,$select_query);
+	$row =pg_fetch_row($result);
+	if($row[0]==1){
+		$delete_query= "delete from shopping_cart_item where p_id=".$params[1]." and sc_id=".$params[2];
+		$result = pg_exec($link,$delete_query);
+		$content = pg_fetch_all($result);
+	}
+	else{
+		$update_query="update shopping_cart_item set quantity=quantity-1 where p_id=".$params[1]." and sc_id=".$params[2];
+		$result = pg_exec($link,$update_query);
+		$content = pg_fetch_all($result);
+	}
 	pg_close($link);
 	return $content;
 }
@@ -115,13 +137,24 @@ function perform_transaction($method,$params){
 	pg_close($link);
 	return $content;
 }
+function total_price_for_shopping_cart($method,$params){
+	$link = pg_connect("host=127.0.0.1 dbname=postgres user=postgres password=postgres");
+	if(!$link){
+		return "no database connection";
+	}
+	$query = "select p_id,p_label,p_image,quantity,p_price, p_price*quantity as totalprice from shopping_cart natural join shopping_cart_Item natural join product where sc_id=".$params[1];
+	$result = pg_exec($link,$query);
+	$content = pg_fetch_all($result);
+	pg_close($link);
+	return $content;
+}
 
 function get_heroes($method, $params){
 	$link = pg_connect("host=127.0.0.1 dbname=postgres user=postgres password=postgres");
 	if(!$link){
 		return "no database connection";
 	}
-	$query="select distinct p_hero from product";
+	$query="select * from heroes";
 	$result = pg_exec($link,$query);
 	$content = pg_fetch_all($result);
 	pg_close($link);
@@ -132,7 +165,7 @@ function get_items_by_hero_name($method,$params){
 	if(!$link){
 		return "no database connection";
 	}
-	$query = "select * from product where p_hero='".$params[1]."'";
+	$query = "select * from product where h_id='".$params[1]."'";
 	$result = pg_exec($link,$query);
 	$content = pg_fetch_all($result);
 	pg_close($link);
@@ -142,11 +175,14 @@ function get_items_by_hero_name($method,$params){
 $server = xmlrpc_server_create();
 
 /* register the 'external' name and then the 'internal' name */
+xmlrpc_server_register_method($server, "total_price_for_shopping_cart", "total_price_for_shopping_cart");
+xmlrpc_server_register_method($server, "get_items_by_hero_name", "get_items_by_hero_name");
 xmlrpc_server_register_method($server, "get_heroes", "get_heroes");
 xmlrpc_server_register_method($server, "get_category", "get_category");
 xmlrpc_server_register_method($server, "register_user", "register_user");
 xmlrpc_server_register_method($server, "register_shopping_cart", "register_shopping_cart");
 xmlrpc_server_register_method($server, "add_item_to_cart", "add_to_shopping_cart");
+xmlrpc_server_register_method($server, "remove_from_shopping_cart", "remove_from_shopping_cart");
 xmlrpc_server_register_method($server, "get_item_category", "get_items_with_category");
 xmlrpc_server_register_method($server, "add_item", "add_item");
 xmlrpc_server_register_method($server, "add_item_to_category", "add_item_to_category");

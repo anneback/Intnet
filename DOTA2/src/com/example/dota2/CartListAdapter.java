@@ -3,7 +3,7 @@ package com.example.dota2;
 
 import java.util.ArrayList;
 
-import com.example.dota2.ImageAdapter.ItemOnClickListener;
+import com.example.dota2.ItemAdapter.ItemOnClickListener;
  
 import android.app.Activity;
 import android.app.FragmentTransaction;

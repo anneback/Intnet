@@ -37,7 +37,7 @@ public class ItemFragment extends Fragment{
 	    	items[i] = temp.get(i);
 	    }
 	    
-	    gridView.setAdapter(new ImageAdapter(getActivity(), items));
+	    gridView.setAdapter(new ItemAdapter(getActivity(), items));
 
 	    return v;
 	}
