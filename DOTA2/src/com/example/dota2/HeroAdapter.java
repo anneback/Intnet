@@ -63,6 +63,7 @@ public class HeroAdapter extends ArrayAdapter{
 	            //Button addToCart = (Button) cell.findViewById(R.id.add_to_cart);
 	            textView.setText(heroes[position].get_value("h_name"));
 	            imageButton.setImageBitmap(heroes[position].get_image());
+	            Log.d("HERO","HERO POS: "+position+" nr heroes: "+heroes.length);
 	          //TODO IMPLEMENT
 	            //fetch and display the items that belongs to that hero
 	            imageButton.setOnClickListener(new ItemOnClickListener(cart,heroes[position].get_value("h_id")));

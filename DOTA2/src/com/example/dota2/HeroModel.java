@@ -5,7 +5,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
+import android.content.Context;
+
 public class HeroModel {
+	Context ctx;
+	public HeroModel(Context c){
+		ctx= c;
+	}
 	public ArrayList<Hero> get_all_heroes(){
 		ArrayList<Hero> Heroes= new ArrayList<Hero>();
 		UploadThreadTask upt = null;
@@ -32,7 +38,7 @@ public class HeroModel {
 			for(Object o:res){
 				@SuppressWarnings("unchecked")
 				HashMap<String,String> hm=(HashMap<String,String>) o;
-				Hero i= new Hero(new Post(hm));
+				Hero i= new Hero(new Post(hm),ctx);
 				Heroes.add(i);
 			}
 		}

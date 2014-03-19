@@ -18,7 +18,7 @@ public class HeroFragment extends Fragment{
 	    View v = inflater.inflate(R.layout.tabfragment, null);
 	    GridView gridView = (GridView) v.findViewById(R.id.grid_of_fragments);
 	    
-	    HeroModel hm = new HeroModel();
+	    HeroModel hm = new HeroModel(this.getActivity());
 	    ArrayList<Hero> tmp = hm.get_all_heroes();
 	    Hero[] heroes = new Hero[tmp.size()];
 	    for(int i = 0; i < heroes.length; i++) {

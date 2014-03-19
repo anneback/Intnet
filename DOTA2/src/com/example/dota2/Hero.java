@@ -2,16 +2,24 @@ package com.example.dota2;
 
 import java.util.concurrent.ExecutionException;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
 
 public class Hero {
 
 	Post p;
 	Bitmap image;
-	public Hero(Post p){
+	Context ctx;
+	public Hero(Post p,Context ctx){
 		this.p=p;
-		//Retrieve and set Image from server
-		set_image(Config.SERVER_URL+get_value("h_image"));
+		this.ctx=ctx;
+		Log.d("HERO","CALLING WITH PARAMETER: "+get_value("h_image"));
+		int imageResource =ctx.getResources().getIdentifier(get_value("h_image"), "drawable", ctx.getPackageName());
+		image = BitmapFactory.decodeResource(ctx.getResources(), imageResource);
 	}
 	public void set_image(String url){
 		GetImageTask GIT=new GetImageTask();
@@ -35,4 +43,5 @@ public class Hero {
 	public String get_value(String value_id){
 		return p.getPostValue(value_id);
 	}
+	
 }

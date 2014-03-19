@@ -26,5 +26,6 @@
     <string name="admin_form_title">Add item form</string>
     <string name="title_activity_cart">CartActivity</string>
     <string name="add_to_cart">Add to cart</string>
+    <string name="remove_from_cart">Remove</string>
 
 </resources>
