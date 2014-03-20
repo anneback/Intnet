@@ -475,7 +475,18 @@ insert into product(p_label,p_image,h_id,p_price)
 values('Tayrnhelm of the Swordmaster','/images/sven_tayrnhelm_of_the_swordmaster.png',86,312000);
 insert into product(p_label,p_image,h_id,p_price)
 values('Wuldastron the TwinBlade of Giants','/images/sven_wuldastron_the_twin_blade_of_giants.png',86,133000);
-
+insert into product(p_label,p_image,h_id,p_price)
+values('Courier Dearless Badger','/images/cour_dearless_badger.png',86,30000);
+insert into product(p_label,p_image,h_id,p_price)
+values('Courier Enduring War Dog','/images/cour_enduring_war_dog.png',86,30000);
+insert into product(p_label,p_image,h_id,p_price)
+values('Courier Mighty Boar','/images/cour_mighty_boar.png',86,3000);
+insert into product(p_label,p_image,h_id,p_price)
+values('Courier Moroks Mechanical Mediary','/images/cour_moroks_mechanical_mediary.png',86,312000);
+insert into product(p_label,p_image,h_id,p_price)
+values('Courier Skip the Delivery Frog','/images/cour_skip_the_delivery_frog.png',86,133000);
+insert into product(p_label,p_image,h_id,p_price)
+values('Courier Speed Demon','/images/cour_speed_demon.png',86,133000);
 
 insert into product_category(p_id,c_id) values(1,2);
 insert into product_category(p_id,c_id) values(107,2);
@@ -499,7 +510,17 @@ insert into product_category(p_id,c_id) values(229,2);
 insert into product_category(p_id,c_id) values(230,2);
 insert into product_category(p_id,c_id) values(231,2);
 insert into product_category(p_id,c_id) values(232,2);
-insert into product_category(p_id,c_id) values(232,2);
+insert into product_category(p_id,c_id) values(233,2);
+insert into product_category(p_id,c_id) values(234,2);
+insert into product_category(p_id,c_id) values(235,2);
+insert into product_category(p_id,c_id) values(236,2);
+insert into product_category(p_id,c_id) values(237,2);
+insert into product_category(p_id,c_id) values(238,2);
+insert into product_category(p_id,c_id) values(239,2);
+insert into product_category(p_id,c_id) values(240,2);
+insert into product_category(p_id,c_id) values(241,2);
+insert into product_category(p_id,c_id) values(242,2);
+insert into product_category(p_id,c_id) values(243,2);
 
 insert into shopping_cart(u_id,sc_cost) values(1,10000);
 insert into shopping_cart_item(p_id,sc_id,quantity) values(1,1,1);

@@ -66,6 +66,7 @@ public class HeroAdapter extends ArrayAdapter{
 
 		} else {
 			holder = (ViewHolder)convertView.getTag();
+
 		}
 		holder.txtview.setText(heroes[position].get_value("h_name"));
 		holder.imgbutton.setImageBitmap(heroes[position].get_image());
