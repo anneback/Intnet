@@ -103,8 +103,19 @@ public class CartModel {
 		}
 		return 1337;
 	}
-	public void buyCart(){
-		//TODO IMPLEMENT
+	public void buyCart(Integer u_id,Integer sc_id){
+		String[] args= new String[2];
+		args[0]="buy_cart";
+		args[1]=u_id.toString();
+		args[2]=sc_id.toString();
+	
+		try {
+			UploadThreadTask upt= new UploadThreadTask(Config.api_url);
+			upt.execute(args);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+	
 	}
 
 }
