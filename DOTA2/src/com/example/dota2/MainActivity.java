@@ -41,6 +41,7 @@ public class MainActivity extends Activity {
 				Integer sc_id=CM.register_shopping_cart(user_id);
 				SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 				SharedPreferences.Editor editor = preferences.edit();
+				editor.putString("username", userMailEdit.getText().toString());
 				editor.putInt("user_id", user_id); // value to store
 				editor.putInt("sc_id", sc_id);
 				editor.commit();

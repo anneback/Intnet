@@ -33,6 +33,9 @@ public class UserActivity extends FragmentActivity implements ActionBar.TabListe
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+		String loggedInUser = preferences.getString("username", null);
+		this.setTitle("User: "+loggedInUser);
 		ActionBar bar = getActionBar();
 		bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 		for (int i=0; i < 3; i++) {
