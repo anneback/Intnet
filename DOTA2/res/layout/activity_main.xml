@@ -47,8 +47,6 @@
                 android:inputType="textEmailAddress"
                 android:textColorHint="#d24726"
                 android:textColor="#d24726" >
-
-                <requestFocus />
             </EditText>
 
             <EditText
