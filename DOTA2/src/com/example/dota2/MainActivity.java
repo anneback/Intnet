@@ -48,16 +48,14 @@ public class MainActivity extends Activity {
 				editor.putInt("user_id", user_id); // value to store
 				editor.putInt("sc_id", sc_id);
 				editor.commit();
-//				Context context = getApplicationContext();
-//				int duration = Toast.LENGTH_LONG;
-//				String text = "user_id: "+String.valueOf(preferences.getInt("user_id", -1));
-//				text=text+" Sc id: "+String.valueOf(preferences.getInt("sc_id", -1));
-//				Toast toast = Toast.makeText(context, text, duration);
-//				toast.show();
+				Context context = getApplicationContext();
+				int duration = Toast.LENGTH_LONG;
+				String text="Successfull registration";
+				Toast toast = Toast.makeText(context, text, duration);
+				toast.show();
 				Intent i = new Intent(MainActivity.this, UserActivity.class);
 
 				startActivity(i);
-				//		setContentView(R.layout.items_layout);
 			}
 		});
 	}

@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 public class CartModel {
-	
+
 	private ArrayList<Item> cartItems;
 	public CartModel(){
 		cartItems= new ArrayList<Item>();
@@ -18,13 +18,13 @@ public class CartModel {
 		}
 		return sum;
 	}
-	
+
 	public void add_item_to_cart(String p_id,Integer sc_id){
 		String args[]= new String[3];
 		args[0]="add_item_to_cart";
 		args[1]=p_id;
 		args[2]=sc_id.toString();
-	
+
 		UploadThreadTask upt;
 		try {
 			upt = new UploadThreadTask(Config.api_url);
@@ -33,7 +33,7 @@ public class CartModel {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 	public void remove_item_from_cart(String p_id,Integer sc_id){
 		String args[]= new String[3];
@@ -49,7 +49,7 @@ public class CartModel {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public ArrayList<Item> get_shopping_cart_information(Integer sc_id){
 		String args[]= new String[2];
 		args[0]="total_price_for_shopping_cart";
@@ -108,14 +108,14 @@ public class CartModel {
 		args[0]="buy_cart";
 		args[1]=u_id.toString();
 		args[2]=sc_id.toString();
-	
+
 		try {
 			UploadThreadTask upt= new UploadThreadTask(Config.api_url);
 			upt.execute(args);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
-	
+
 	}
 
 }

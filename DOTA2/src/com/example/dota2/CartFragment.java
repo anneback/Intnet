@@ -5,6 +5,7 @@ import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CartFragment extends Fragment {
 
@@ -36,12 +38,13 @@ public class CartFragment extends Fragment {
 			listView.setAdapter(adapter);
 			TextView allInAllTotal = (TextView) view.findViewById(R.id.textView1);
 			Button buyButton = (Button) view.findViewById(R.id.cartbutton);
-			allInAllTotal.setText("Total amount to pay: "+String.valueOf((cm.get_total_price())));
+			final int price= cm.get_total_price();
+			allInAllTotal.setText("Total amount to pay: "+String.valueOf(price));
 			buyButton.setOnClickListener(new View.OnClickListener(){
 
 				@Override
 				public void onClick(View v) {
-					Log.d("CARTACTIVITY","waaaaaaaaaj");
+			
 					cm.buyCart(u_id, sc_id);
 					int newsc_id=cm.register_shopping_cart(u_id);
 					CartFragment newFragment = new CartFragment();
@@ -49,6 +52,11 @@ public class CartFragment extends Fragment {
 					SharedPreferences.Editor editor = preferences.edit();
 					editor.putInt("sc_id", newsc_id);
 					editor.commit();
+					Context context = getActivity().getApplicationContext();
+					int duration = Toast.LENGTH_LONG;
+					String text="You bought items for: "+String.valueOf(price)+" Dotacoins";
+					Toast toast = Toast.makeText(context, text, duration);
+					toast.show();
 					FragmentTransaction transaction = getFragmentManager().beginTransaction();
 					transaction.replace(android.R.id.content, newFragment);
 					transaction.addToBackStack(null);
