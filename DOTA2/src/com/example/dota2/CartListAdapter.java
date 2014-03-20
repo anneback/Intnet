@@ -14,7 +14,11 @@ import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
-
+/**
+ * View inflater for showing cart items with information in a listview, with buttons to remove unwanted items.
+ * @author Carl Henrik Klåvus chklavus@kth.se
+ * @author Jesper Annebäck anneback@kth.se
+ */
 public class CartListAdapter extends ArrayAdapter<Item> {
 	private CartModel cart;
 	private final Context context;

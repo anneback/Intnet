@@ -8,7 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
-
+/**
+ * Hero fragment that shows the gridview with our different clickable heroes, most of the functionality is implemented in the HeroAdapter.
+ * @author Carl Henrik Klåvus chklavus@kth.se
+ * @author Jesper Annebäck anneback@kth.se
+ */
 public class HeroFragment extends Fragment{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,

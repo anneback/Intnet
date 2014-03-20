@@ -6,7 +6,11 @@ import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 import android.content.Context;
-
+/**
+ * HeroModel that contains the function get_all_heroes, which is an api call to our php backend.
+ * @author Carl Henrik Klåvus chklavus@kth.se
+ * @author Jesper Annebäck anneback@kth.se
+ */
 public class HeroModel {
 	Context ctx;
 	public HeroModel(Context c){

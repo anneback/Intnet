@@ -7,7 +7,11 @@ import android.util.Log;
 import de.timroes.axmlrpc.XMLRPCClient;
 import de.timroes.axmlrpc.XMLRPCException;
 
-
+/**
+ * Class that uses 3rd party xmlrpc library for android, this is used to communicate with our php backend.
+ * @author Carl Henrik Klåvus chklavus@kth.se
+ * @author Jesper Annebäck anneback@kth.se
+ */
 public class UploadThreadTask extends AsyncTask<String, Integer, Object[]> {
 
 	private  XMLRPCClient client;

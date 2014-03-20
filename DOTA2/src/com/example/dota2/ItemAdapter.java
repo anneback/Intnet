@@ -12,7 +12,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.app.Activity;
-
+/**
+ * Custom ArrayAdapter to inflate views of our itemfragment, all items are generated through content taken from php backend.
+ * @author Carl Henrik Klåvus chklavus@kth.se
+ * @author Jesper Annebäck anneback@kth.se
+ */
 public class ItemAdapter extends ArrayAdapter<Item>{
 
 	private CartModel cart;

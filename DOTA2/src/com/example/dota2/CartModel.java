@@ -4,7 +4,11 @@ import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
-
+/**
+ * Cartmodel that supplies api functionality to our php backend via xmlrpc calls from an external library for android
+ * @author Carl Henrik Klåvus chklavus@kth.se
+ * @author Jesper Annebäck anneback@kth.se
+ */
 public class CartModel {
 
 	private ArrayList<Item> cartItems;
