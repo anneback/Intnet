@@ -8,9 +8,13 @@ import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
+import android.view.MenuItem;
 
 public class UserActivity extends FragmentActivity implements ActionBar.TabListener{
 
@@ -71,7 +75,24 @@ public class UserActivity extends FragmentActivity implements ActionBar.TabListe
 		}
 	}
 
-
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle item selection
+	    switch (item.getItemId()) {
+	        case R.id.action_settings:
+	        	Intent i = new Intent(UserActivity.this, MainActivity.class);
+	        	SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+				SharedPreferences.Editor editor = preferences.edit();
+				editor.putInt("user_id", -1); // reset user id to no user
+				editor.putInt("sc_id", -1); // and also session id
+				editor.commit();
+	        	startActivity(i);
+	        	return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
+	
+	
 	@Override
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 	}
