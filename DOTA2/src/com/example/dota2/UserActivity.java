@@ -55,7 +55,18 @@ public class UserActivity extends FragmentActivity implements ActionBar.TabListe
 
 	@Override
 	public void onTabReselected(Tab tab, FragmentTransaction ft) {
-
+		if (tab.getPosition() == 1) {
+			HeroFragment heroFragment = new HeroFragment();
+			ft.replace(android.R.id.content, heroFragment);			
+		} 
+		else if (tab.getPosition() == 2) {
+			CartFragment cartFragment = new CartFragment();
+			ft.replace(android.R.id.content, cartFragment);
+		}
+		else {
+			ItemFragment tabFragment = new ItemFragment();
+			ft.replace(android.R.id.content, tabFragment);
+		}
 	}
 
 	@Override

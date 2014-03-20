@@ -8,11 +8,11 @@
         android:id="@+id/grid_of_fragments"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:columnWidth="80dp"
         android:gravity="center"
         android:numColumns="auto_fit"
-        android:stretchMode="columnWidth"
-        />
-    
+        android:stretchMode="columnWidth" />
 
 </RelativeLayout>
