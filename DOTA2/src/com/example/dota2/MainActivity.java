@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
 				editor.commit();
 				//
 				Context context = getApplicationContext();
-			
+			//
 				int duration = Toast.LENGTH_LONG;
 				String text = "user_id: "+String.valueOf(preferences.getInt("user_id", 1337));
 				text=text+" Sc id: "+String.valueOf(preferences.getInt("sc_id", 1337));
