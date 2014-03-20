@@ -104,7 +104,7 @@ public class CartModel {
 		return 1337;
 	}
 	public void buyCart(Integer u_id,Integer sc_id){
-		String[] args= new String[2];
+		String[] args= new String[3];
 		args[0]="buy_cart";
 		args[1]=u_id.toString();
 		args[2]=sc_id.toString();

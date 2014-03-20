@@ -26,7 +26,7 @@ public class CartListAdapter extends ArrayAdapter<Item> {
         private Integer sc_id;
  
         public CartListAdapter(Context context, ArrayList<Item> itemsArrayList) {
-            super(context, R.layout.itemrow, itemsArrayList);
+            super(context, R.layout.cart_row, itemsArrayList);
             this.cart = new CartModel();
             this.context = context;
             this.itemsArrayList = itemsArrayList;
@@ -39,7 +39,7 @@ public class CartListAdapter extends ArrayAdapter<Item> {
             LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             // 2. Get rowView from inflater
-            View rowView = inflater.inflate(R.layout.itemrow, parent, false);
+            View rowView = inflater.inflate(R.layout.cart_row, parent, false);
             // 3. Get the two text view from the rowView
             TextView labelView = (TextView) rowView.findViewById(R.id.label);
             TextView valueView = (TextView) rowView.findViewById(R.id.value);
