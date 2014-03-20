@@ -1,4 +1,4 @@
-
+<!-- The activity layout for the window of a logged in user  -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/userlayout"
