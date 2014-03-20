@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 		int u_id=preferences.getInt("user_id", -1);
 		int sc_id=preferences.getInt("sc_id", -1);
-		if(u_id!=-1 && sc_id!=-1){
+		if(u_id!=-1 || sc_id!=-1){
 			Intent i = new Intent(MainActivity.this, UserActivity.class);
 			startActivity(i);
 		}
