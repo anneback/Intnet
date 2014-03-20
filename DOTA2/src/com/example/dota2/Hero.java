@@ -3,10 +3,8 @@ package com.example.dota2;
 import java.util.concurrent.ExecutionException;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.util.Log;
 
 public class Hero {
@@ -26,10 +24,8 @@ public class Hero {
 		try {
 			this.image=GIT.execute(url).get();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

@@ -29,11 +29,8 @@ public class UserActivity extends FragmentActivity implements ActionBar.TabListe
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//setContentView(R.layout.activity_main);
 		ActionBar bar = getActionBar();
 		bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-
-
 		for (int i=0; i < 3; i++) {
 			Tab tab = bar.newTab();
 
@@ -102,7 +99,6 @@ public class UserActivity extends FragmentActivity implements ActionBar.TabListe
 	            return super.onOptionsItemSelected(item);
 	    }
 	}
-	
 	
 	@Override
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {

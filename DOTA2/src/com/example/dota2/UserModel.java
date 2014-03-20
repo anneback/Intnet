@@ -20,7 +20,6 @@ public class UserModel {
 			upt.execute(args);
 			return true;
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
 		}

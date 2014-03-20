@@ -20,7 +20,6 @@ public class ItemFragment extends Fragment{
 	    if(bundle!=null){
 	    	  h_id = bundle.getString("h_id");
 	    }
-      
 		ArrayList<Item> temp=null;
 		if(h_id!=null){
 			temp = im.get_item_by_hero(h_id);
@@ -29,14 +28,10 @@ public class ItemFragment extends Fragment{
 		}
 	    View v = inflater.inflate(R.layout.tabfragment, null);
 	    GridView gridView = (GridView) v.findViewById(R.id.grid_of_fragments);
-	
-
-	    
 	    Item[] items = new Item[temp.size()];
 	    for(int i = 0; i < items.length; i++) {
 	    	items[i] = temp.get(i);
 	    }
-	    
 	    gridView.setAdapter(new ItemAdapter(getActivity(), items));
 
 	    return v;

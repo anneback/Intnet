@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.app.Activity;
 
-public class ItemAdapter extends ArrayAdapter{
+public class ItemAdapter extends ArrayAdapter<Item>{
 
 	private CartModel cart;
 	private Context ctx;
@@ -31,26 +31,22 @@ public class ItemAdapter extends ArrayAdapter{
 	}
 	@Override
 	public int getCount() {
-		// TODO Auto-generated method stub
 		return items.length;
 	}
 
 	@Override
-	public Object getItem(int position) {
-		// TODO Auto-generated method stub
+	public Item getItem(int position) {
 		return null;
 	}
 
 	@Override
 	public long getItemId(int position) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ViewHolder holder;
-		// TODO Auto-generated method stub
 		View cell = convertView;
 		if (convertView == null) {
 			holder = new ViewHolder();
@@ -63,7 +59,6 @@ public class ItemAdapter extends ArrayAdapter{
 
 		} else {
 			holder =(ViewHolder) convertView.getTag();
-			//	            cell = (View) convertView;
 		}
 		holder.textView.setText(items[position].get_value("p_label")+"\n"+items[position].get_value("p_price"));
 		holder.imageView.setImageBitmap(items[position].get_image());
@@ -81,8 +76,6 @@ public class ItemAdapter extends ArrayAdapter{
 		CartModel cm;
 		String p_id;
 		Integer sc_id;
-
-
 		public ItemOnClickListener (CartModel cm, String pid, Integer scid) {
 			this.p_id = pid;
 			this.sc_id = scid;
@@ -90,7 +83,6 @@ public class ItemAdapter extends ArrayAdapter{
 		}
 		@Override
 		public void onClick(View v) {
-			// TODO Auto-generated method stub
 			cm.add_item_to_cart(p_id, sc_id);
 		}
 	}
