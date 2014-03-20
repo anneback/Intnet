@@ -10,7 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
+/**
+ * StartView with logic behind "login/registration to our application"
+ * @author Carl Henrik Klåvus chklavus@kth.se
+ * @author Jesper Annebäck anneback@kth.se
+ */
 public class MainActivity extends Activity {
 	private EditText userMailEdit;
 	private EditText userPasswordEdit;

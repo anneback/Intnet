@@ -4,7 +4,11 @@ import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
-
+/**
+ * ItemModel that supports functions like get_item_by_hero or get_all items, both done via xmlrpc calls to phpbackend.
+ * @author Carl Henrik Klåvus chklavus@kth.se
+ * @author Jesper Annebäck anneback@kth.se
+ */
 public class ItemModel {
 
 	ArrayList<Item> items;

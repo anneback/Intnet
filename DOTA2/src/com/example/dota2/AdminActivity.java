@@ -15,7 +15,12 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import android.support.v4.app.NavUtils;
-
+/**
+ * Activity created with the thought that admins of dota2 app can add new items.
+ * Currently not used in the application.
+ * @author Carl Henrik Klåvus chklavus@kth.se
+ * @author Jesper Annebäck anneback@kth.se
+ */
 public class AdminActivity extends Activity {
 	private static final int PICK_IMAGE = 1;
 

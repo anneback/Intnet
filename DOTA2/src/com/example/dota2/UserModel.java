@@ -3,7 +3,12 @@ package com.example.dota2;
 import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
-
+/**
+ * Simple api to our php backend to support user-like functions such as register_user_add_item_to_shopping cart, probably have some functions mixxed in
+ * with Our CartModel.
+ * @author Carl Henrik Klåvus chklavus@kth.se
+ * @author Jesper Annebäck anneback@kth.se
+ */
 public class UserModel {
 	
 	public UserModel(){

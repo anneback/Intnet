@@ -15,7 +15,11 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-
+/**
+ * Core functionality for swapping between our Cart,Item and Hero fragments aswell as a Logout function.
+ * @author Carl Henrik Klåvus chklavus@kth.se
+ * @author Jesper Annebäck anneback@kth.se
+ */
 public class UserActivity extends FragmentActivity implements ActionBar.TabListener{
 
 	private final String[] TAB_TEXTS = {

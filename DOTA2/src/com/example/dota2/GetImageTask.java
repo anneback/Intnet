@@ -9,7 +9,11 @@ import java.net.URLConnection;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-
+/**
+ * Async task for downloading images from our server
+ * @author Carl Henrik Klåvus chklavus@kth.se
+ * @author Jesper Annebäck anneback@kth.se
+ */
 public class GetImageTask extends AsyncTask<String, Bitmap, Bitmap> {
 	@Override
 	protected Bitmap doInBackground(String... urls) {

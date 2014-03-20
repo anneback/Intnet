@@ -10,7 +10,11 @@ import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
+/**
+ * ArrayAdapter to inflate view and produce dynamic content(retrieved from our server) in a gridview.
+ * @author Carl Henrik Klåvus chklavus@kth.se
+ * @author Jesper Annebäck anneback@kth.se
+ */
 public class HeroAdapter extends ArrayAdapter<Hero>{
 	private CartModel cart;
 	private Context ctx;

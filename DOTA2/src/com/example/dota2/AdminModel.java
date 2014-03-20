@@ -5,7 +5,12 @@ import java.util.Arrays;
 import java.util.concurrent.ExecutionException;
 
 import android.util.Log;
-
+/**
+ * Model that supports adding a new item to dota2 shoppe database.
+ * Currently not used in the application
+ * @author Carl Henrik Klåvus chklavus@kth.se
+ * @author Jesper Annebäck anneback@kth.se
+ */
 public class AdminModel {
 	public AdminModel(){
 		

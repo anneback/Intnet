@@ -8,7 +8,12 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import android.os.AsyncTask;
-
+/**
+ * Class that handles a simple multipart form sending image data to server,
+ * currently not in use in the application.
+ * @author Carl Henrik Klåvus chklavus@kth.se
+ * @author Jesper Annebäck anneback@kth.se
+ */
 
 public class UploadImageTask extends AsyncTask<String, Integer, Integer> {
 

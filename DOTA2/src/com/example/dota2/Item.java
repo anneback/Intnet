@@ -3,7 +3,11 @@ package com.example.dota2;
 import java.util.concurrent.ExecutionException;
 
 import android.graphics.Bitmap;
-
+/**
+ * Container object to help with abstraction in the rest of our code.
+ * @author Carl Henrik Klåvus chklavus@kth.se
+ * @author Jesper Annebäck anneback@kth.se
+ */
 public class Item {
 
 	Post p;
