@@ -2,7 +2,6 @@ package com.example.dota2;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
-
 import android.os.AsyncTask;
 import android.util.Log;
 import de.timroes.axmlrpc.XMLRPCClient;
@@ -27,7 +26,6 @@ public class UploadThreadTask extends AsyncTask<String, Integer, Object[]> {
 				response=(Object[])o;
 			}
 		} catch (XMLRPCException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 
 		}

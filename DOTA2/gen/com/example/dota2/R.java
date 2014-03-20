@@ -210,9 +210,8 @@ public final class R {
         public static final int activity_user=0x7f030003;
         public static final int cart_row=0x7f030004;
         public static final int heroes_layout=0x7f030005;
-        public static final int itemrow=0x7f030006;
-        public static final int items_layout=0x7f030007;
-        public static final int tabfragment=0x7f030008;
+        public static final int items_layout=0x7f030006;
+        public static final int tabfragment=0x7f030007;
     }
     public static final class menu {
         public static final int admin=0x7f070000;

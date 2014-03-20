@@ -15,12 +15,10 @@ public class HeroModel {
 	public ArrayList<Hero> get_all_heroes(){
 		ArrayList<Hero> Heroes= new ArrayList<Hero>();
 		UploadThreadTask upt = null;
-		//String res="";
 		Object[] res=null;
 		try {
 			upt = new UploadThreadTask(Config.api_url);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		String[] arr={"get_heroes"};
@@ -28,10 +26,8 @@ public class HeroModel {
 		try {
 			res = upt.execute(arr).get();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		if(res!=null){

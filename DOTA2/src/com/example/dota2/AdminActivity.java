@@ -45,7 +45,7 @@ public class AdminActivity extends Activity {
 				p.setPostValue("p_label", itemLabel.getText().toString());
 				p.setPostValue("p_desc", itemDescription.getText().toString());
 				p.setPostValue("p_image", itemImageName);
-				p.setPostValue("p_hero", itemHero.getText().toString());
+				p.setPostValue("h_id", itemHero.getText().toString());
 				p.setPostValue("p_price", itemPrice.getText().toString());
 				AM.add_item(p);
 				AM.upload_image(imageFilePath,itemImageName);

@@ -18,10 +18,8 @@ public class Item {
 		try {
 			this.image=GIT.execute(url).get();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

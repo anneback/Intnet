@@ -92,7 +92,6 @@ public class UploadImageTask extends AsyncTask<String, Integer, Integer> {
 		try {
 			returnCode=upload(params[0],params[1],params[2]);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return returnCode;

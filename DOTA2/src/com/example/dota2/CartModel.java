@@ -18,7 +18,6 @@ public class CartModel {
 		}
 		return sum;
 	}
-
 	public void add_item_to_cart(String p_id,Integer sc_id){
 		String args[]= new String[3];
 		args[0]="add_item_to_cart";
@@ -30,7 +29,6 @@ public class CartModel {
 			upt = new UploadThreadTask(Config.api_url);
 			upt.execute(args);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -45,7 +43,6 @@ public class CartModel {
 			upt = new UploadThreadTask(Config.api_url);
 			upt.execute(args);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -59,13 +56,10 @@ public class CartModel {
 			UploadThreadTask upt = new UploadThreadTask(Config.api_url);
 			res=upt.execute(args).get();
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		if(res!=null){
