@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:orientation="vertical"
-  android:layout_width="wrap_content"
-  android:layout_height="wrap_content">
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:paddingTop="1dp"
+  android:paddingLeft="1dp"
+  android:paddingRight="1dp"
+  android:paddingBottom="1dp">
 
     <ImageView
         android:id="@+id/grid_item_image"
         android:layout_height="64dp"
         android:layout_width="64dp"
-        android:layout_alignParentTop="true">
+        android:gravity="center">
     </ImageView>
  
     <TextView
         android:id="@+id/grid_item_label"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_above="@+id/grid_item_image"
-        android:layout_marginTop="2dp"
-        android:textSize="16sp"
+        android:textSize="13sp"
+        android:gravity="center"
         android:ellipsize="marquee">
     </TextView>
 
@@ -27,6 +29,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_to_cart"
-        android:textSize="11sp" />
+        android:textSize="12sp" />
      
 </LinearLayout>
