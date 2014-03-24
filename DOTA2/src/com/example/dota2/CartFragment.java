@@ -1,7 +1,10 @@
 package com.example.dota2;
 
+import java.util.ArrayList;
+
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
@@ -10,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,9 +32,10 @@ public class CartFragment extends Fragment {
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this.getActivity().getBaseContext());
 		final Integer sc_id= preferences.getInt("sc_id", -1);
 		final Integer u_id= preferences.getInt("user_id", -1);
+		final ArrayList<Item> cart_items = cm.get_shopping_cart_information(sc_id);
 		CartListAdapter adapter= null;
 		if(sc_id!=-1){
-			adapter = new CartListAdapter(getActivity(), cm.get_shopping_cart_information(sc_id));
+			adapter = new CartListAdapter(getActivity(),cart_items);
 			listView.setAdapter(adapter);
 			TextView allInAllTotal = (TextView) view.findViewById(R.id.textView1);
 			Button buyButton = (Button) view.findViewById(R.id.cartbutton);
@@ -40,24 +45,44 @@ public class CartFragment extends Fragment {
 
 				@Override
 				public void onClick(View v) {
-
-					cm.buyCart(u_id, sc_id);
-					int newsc_id=cm.register_shopping_cart(u_id);
-					CartFragment newFragment = new CartFragment();
-					SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity().getBaseContext());
-					SharedPreferences.Editor editor = preferences.edit();
-					editor.putInt("sc_id", newsc_id);
-					editor.commit();
-					Context context = getActivity().getApplicationContext();
-					int duration = Toast.LENGTH_LONG;
-					String text="You bought items for: "+String.valueOf(price)+" Dotacoins";
-					Toast toast = Toast.makeText(context, text, duration);
-					toast.show();
-					FragmentTransaction transaction = getFragmentManager().beginTransaction();
-					transaction.replace(android.R.id.content, newFragment);
-					transaction.addToBackStack(null);
-					transaction.commit();
-
+					final Dialog dialog = new Dialog(getActivity());
+					dialog.setContentView(R.layout.receipt);
+					dialog.setTitle("Receipt");
+					ImageView image = (ImageView) dialog.findViewById(R.id.receipt_image);
+					image.setImageResource(R.drawable.secret_shop);
+					TextView text = (TextView) dialog.findViewById(R.id.receipt_text);
+					text.setText("You bought: "+cart_items.size()+" items for "+price);
+					
+					Button dialogOkButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
+					Button dialogCancelButton = (Button) dialog.findViewById(R.id.dialogButtonCancel);
+					// if button is clicked, close the custom dialog
+					dialogCancelButton.setOnClickListener(new View.OnClickListener() {
+						@Override
+						public void onClick(View v) {
+							dialog.dismiss();
+						}
+					});
+					
+					dialogOkButton.setOnClickListener(new View.OnClickListener() {
+						@Override
+						public void onClick(View v) {
+							dialog.dismiss();
+							
+							cm.buyCart(u_id, sc_id);
+							int newsc_id=cm.register_shopping_cart(u_id);
+							CartFragment newFragment = new CartFragment();
+							SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity().getBaseContext());
+							SharedPreferences.Editor editor = preferences.edit();
+							editor.putInt("sc_id", newsc_id);
+							editor.commit();
+							
+							FragmentTransaction transaction = getFragmentManager().beginTransaction();
+							transaction.replace(android.R.id.content, newFragment);
+							transaction.addToBackStack(null);
+							transaction.commit();
+						}
+					});
+					dialog.show();
 				}
 
 			});
