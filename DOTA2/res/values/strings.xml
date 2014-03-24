@@ -8,7 +8,7 @@
     <string name="password_hint">Enter password</string>
     <string name="email_hint">email@address.com</string>
     <string name="text_register">Register</string>
-    <string name="login_button_text">Login</string>
+    <string name="login_button_text">Login or register</string>
     <string name="splash_pic">splash</string>
     <string name="title_activity_user">UserActivity</string>
     <string name="balance">1000</string>

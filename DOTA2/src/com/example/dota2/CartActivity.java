@@ -15,17 +15,16 @@ public class CartActivity extends Activity {
 		setContentView(R.layout.activity_cart);
 		CartModel cm= new CartModel();
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-		Integer sc_id= preferences.getInt("sc_id", -1);
+		Integer sc_id= preferences.getInt("sc_id", -1); // -1 default value
 		CartListAdapter adapter= null;
 		if(sc_id!=-1){
 			adapter = new CartListAdapter(this, cm.get_shopping_cart_information(sc_id));
-		
-		 
-        // 2. Get ListView from activity_main.xml
+        // Get ListView from activity_main.xml
         ListView listView = (ListView) findViewById(R.id.cartlistview);
  
-        // 3. setListAdapter
+        // setListAdapter
         listView.setAdapter(adapter);
+        // textview that display's all items in the cart
         TextView allInAllTotal = (TextView) findViewById(R.id.textView1);
         allInAllTotal.setText("Total amount to pay: "+String.valueOf((cm.get_total_price())));
 		}

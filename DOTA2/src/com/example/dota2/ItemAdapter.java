@@ -50,12 +50,12 @@ public class ItemAdapter extends ArrayAdapter<Item>{
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		ViewHolder holder;
+		ViewHolder holder; // To not overlap views when generating new view of the same type
 		View cell = convertView;
 		if (convertView == null) {
 			holder = new ViewHolder();
 			LayoutInflater inflater = ((Activity) ctx).getLayoutInflater();
-			cell=inflater.inflate(R.layout.items_layout, parent, false);
+			cell = inflater.inflate(R.layout.items_layout, parent, false);
 			holder.textView = (TextView) cell.findViewById(R.id.grid_item_label);
 			holder.imageView = (ImageView) cell.findViewById(R.id.grid_item_image);
 			holder.button = (Button) cell.findViewById(R.id.add_to_cart);
