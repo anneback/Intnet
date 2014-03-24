@@ -28,7 +28,7 @@ public class GetImageTask extends AsyncTask<String, Bitmap, Bitmap> {
 		Bitmap bitmap = null;
 		InputStream stream = null;
 		BitmapFactory.Options bmOptions = new BitmapFactory.Options();
-		bmOptions.inSampleSize = 1;
+		bmOptions.inSampleSize = 1; // 1 to 1 ratio images are not compressed
 
 		try {
 			stream = getHttpConnection(url);

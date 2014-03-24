@@ -38,7 +38,7 @@ public class CartListAdapter extends ArrayAdapter<Item> {
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-		ViewHolder holder=null;
+		ViewHolder holder=null; // To not overlap views when generating new view of the same type
 		if(convertView==null){
 			convertView = inflater.inflate(R.layout.cart_row, parent, false);
 			holder=new ViewHolder();

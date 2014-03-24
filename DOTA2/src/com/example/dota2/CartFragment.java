@@ -29,9 +29,11 @@ public class CartFragment extends Fragment {
 		View view =  inflater.inflate(R.layout.activity_cart, container, false);
 		ListView listView = (ListView) view.findViewById(R.id.cartlistview);
 		final CartModel cm= new CartModel();
+		// Getting access to stored data from the first call to the DB
+		// Functions like a cookie
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this.getActivity().getBaseContext());
-		final Integer sc_id= preferences.getInt("sc_id", -1);
-		final Integer u_id= preferences.getInt("user_id", -1);
+		final Integer sc_id= preferences.getInt("sc_id", -1); // -1 default value
+		final Integer u_id= preferences.getInt("user_id", -1); // -1 default value
 		final ArrayList<Item> cart_items = cm.get_shopping_cart_information(sc_id);
 		CartListAdapter adapter= null;
 		if(sc_id!=-1){

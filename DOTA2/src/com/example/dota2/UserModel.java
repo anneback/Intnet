@@ -14,6 +14,8 @@ public class UserModel {
 	public UserModel(){
 		
 	}
+	
+	// Adding items to the shopping cart
 	public boolean add_item_to_shopping_cart(Integer sc_id,Integer p_id){
 		String[] args = new String[3];
 		args[0] = "add_item_to_cart";
@@ -51,7 +53,7 @@ public class UserModel {
 			HashMap<String,String> hm=(HashMap<String,String>) o;
 			return Integer.parseInt(hm.get("u_id"));
 		}
-		return 1337;
+		return -1;
 	}
 
 

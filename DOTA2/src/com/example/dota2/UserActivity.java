@@ -1,12 +1,9 @@
 package com.example.dota2;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import com.example.dota2.R;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
-import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -27,27 +24,23 @@ public class UserActivity extends FragmentActivity implements ActionBar.TabListe
 			"Heroes",
 			"Cart"};
 
-
-	List<Fragment> fragList = new ArrayList<Fragment>();
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		// Getting access to stored data from the first call to the DB
+		// Functions like a cookie
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 		String loggedInUser = preferences.getString("username", null);
 		this.setTitle("Shopping as: "+loggedInUser);
 		ActionBar bar = getActionBar();
 		bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		// Create the Tabs
 		for (int i=0; i < 3; i++) {
 			Tab tab = bar.newTab();
-
 			tab.setText(TAB_TEXTS[i]);
 			tab.setTabListener(this);
 			bar.addTab(tab);
-
-
 		}
-		
 	}
 
 	@Override
@@ -68,6 +61,7 @@ public class UserActivity extends FragmentActivity implements ActionBar.TabListe
 			ft.replace(android.R.id.content, cartFragment);
 		}
 		else {
+			// Default tab is Items
 			ItemFragment tabFragment = new ItemFragment();
 			ft.replace(android.R.id.content, tabFragment);
 		}
@@ -85,16 +79,20 @@ public class UserActivity extends FragmentActivity implements ActionBar.TabListe
 			ft.replace(android.R.id.content, cartFragment);
 		}
 		else {
+			// Default tab is Items
 			ItemFragment tabFragment = new ItemFragment();
 			ft.replace(android.R.id.content, tabFragment);
 		}
 	}
 
+	// The Settings icon function i.e. Logout function
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    // Handle item selection
 	    switch (item.getItemId()) {
 	        case R.id.action_settings:
 	        	Intent i = new Intent(UserActivity.this, MainActivity.class);
+	        	// Getting access to stored data from the first call to the DB
+	    		// Functions like a cookie
 	        	SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 				SharedPreferences.Editor editor = preferences.edit();
 				editor.putInt("user_id", -1); // reset user id to no user

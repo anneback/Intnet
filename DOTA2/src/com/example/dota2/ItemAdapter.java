@@ -30,22 +30,14 @@ public class ItemAdapter extends ArrayAdapter<Item>{
 		ctx=c;
 		this.items = items;
 		this.cart = new CartModel();
+		// Getting access to stored data from the first call to the DB
+		// Functions like a cookie
 		SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences((Activity) ctx);
-		sc_id = pref.getInt("sc_id", -1);
+		sc_id = pref.getInt("sc_id", -1); // -1 default value
 	}
 	@Override
 	public int getCount() {
 		return items.length;
-	}
-
-	@Override
-	public Item getItem(int position) {
-		return null;
-	}
-
-	@Override
-	public long getItemId(int position) {
-		return 0;
 	}
 
 	@Override

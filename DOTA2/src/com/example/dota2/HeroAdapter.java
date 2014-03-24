@@ -34,18 +34,8 @@ public class HeroAdapter extends ArrayAdapter<Hero>{
 	}
 
 	@Override
-	public Hero getItem(int position) {
-		return null;
-	}
-
-	@Override
-	public long getItemId(int position) {
-		return 0;
-	}
-
-	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		ViewHolder holder = null;
+		ViewHolder holder = null; // To not overlap views when generating new view of the same type
 
 		View cell = convertView;
 		if (convertView == null) {
@@ -60,6 +50,7 @@ public class HeroAdapter extends ArrayAdapter<Hero>{
 			holder = (ViewHolder)convertView.getTag();
 
 		}
+		//fill holder view dynamic content from db
 		holder.txtview.setText(heroes[position].get_value("h_name"));
 		holder.imgbutton.setImageBitmap(heroes[position].get_image());
 		holder.imgbutton.setOnClickListener(new ItemOnClickListener(cart,heroes[position].get_value("h_id")));
@@ -72,17 +63,17 @@ public class HeroAdapter extends ArrayAdapter<Hero>{
 		public ImageButton imgbutton;
 	}
 	
+	// When clicking on a hero portrait
 	public class ItemOnClickListener implements OnClickListener{
 		String h_id;
 
-
 		public ItemOnClickListener (CartModel cm, String hid) {
 			this.h_id = hid;
-
 		}
 		public void onClick(View v) {
+			// Create a Itemfragment but with only items that the hero have
 			ItemFragment newFragment = new ItemFragment();
-			Bundle bundle = new Bundle();
+			Bundle bundle = new Bundle(); // Sent the hero info with this object
 			bundle.putString("h_id", h_id);
 			newFragment.setArguments(bundle);
 			FragmentTransaction transaction = ((Activity)ctx).getFragmentManager().beginTransaction();
@@ -91,5 +82,4 @@ public class HeroAdapter extends ArrayAdapter<Hero>{
 			transaction.commit();
 		}
 	}
-
 }
